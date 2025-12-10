@@ -97,6 +97,7 @@ button:hover {
     background: #020617;
     padding: 8rem 0;
     align-items: center;
+    border-color: black;
 }
 .course-container, .reason-container, .practice-container, .collaborate-container, .join-container {
     display: flex;
