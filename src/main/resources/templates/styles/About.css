@@ -89,3 +89,23 @@ line-height: 28px;
 font-size: 10px;
 margin-bottom: 45px;
 }
+@media (max-width : 1000px) {
+.main {
+min-height: 100hv;
+flex-direction: column;
+}
+.about {
+min-height: 100vh;
+flex-direction: column;
+border-radius: 0;}
+}
+@media (max-width : 500px) {
+.main {
+min-height: 100hv;
+flex-direction: column;
+}
+.about {
+min-height: 100vh;
+flex-direction: column;
+border-radius: 0;}
+}
