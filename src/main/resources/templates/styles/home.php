@@ -1,3 +1,12 @@
+<?php
+session_start();
+if (!isset($_SESSION['username'])) {
+    header("Location: index.html"); // redirect if not logged in
+    exit;
+}
+$username = $_SESSION['username'];
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +22,7 @@
 <body>
 
 <nav>
-    <a href="home.html"><div class="logo">Numbl</div></a>
+    <a href="home.php"><div class="logo">Numbl</div></a>
     <div class="nav-item">
         <a href="../mathSub/courses.html">Courses</a>
         <a href="calendar.html">Join Live</a>
@@ -25,7 +34,7 @@
 
     <div class="penguin-box">
         <div class="speech-bubble">
-            <p id="welcome-text">Welcome back, User!</p>
+            <p id="welcome-text">Welcome back, <?php echo htmlspecialchars($username); ?>!</p>
             <div class="bubble-arrow"></div>
 
         </div>
