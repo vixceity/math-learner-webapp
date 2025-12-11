@@ -1,11 +1,3 @@
-<?php
-session_start();
-if (!isset($_SESSION['username'])) {
-    header("Location: index.html"); // redirect if not logged in
-    exit;
-}
-$username = $_SESSION['username'];
-?>
 
 <!DOCTYPE html>
 <html lang="en">
