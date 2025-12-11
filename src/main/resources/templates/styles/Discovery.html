@@ -5,19 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Numbl</title>
     <link rel="stylesheet" href="Discovery.css">
+    <script src="Discovery.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <nav>
-        <!--test-->
-        <a href="Discovery.html"><div class="logo">Numbl</div></a>
-        <div class="nav-item">
-            <a href="About.html">About</a>
-            <a href="../mathSub/courses.html">Courses</a>
-            <a href="Signup.html">Login</a>
-        </div>
+    <button id="open-sidebar-button" onclick="openSidebar()">
+        <i class='bx  bx-menu' style='color:#000000'></i>
+    </button>
+    <nav id="navbar">
+        <ul class="bar-items">
+            <a><button id="close-sidebar-button" onclick="closeSidebar()"><i class='bx  bx-x' style='color:#000000'></i> </button></a>
+            <a href="Discovery.html"><div class="logo">Numbl</div></a>
+            <div class="nav-item">
+                <a href="About.html">About</a>
+                <a href="../mathSub/courses.html">Courses</a>
+                <a href="Signup.html">Login</a>
+            </div>
+        </ul>
+
     </nav>
 <section class="hero">
     <div class="hero-container"></div>
@@ -51,7 +58,7 @@
                         <div><img src="../pic/icons8-math-64.png"></div>
                         <div class="h3d">
                             <div><h3>Personalized learning</h3></div>
-                            <div class="h4d">Lessons are self-paced, flexible and used to fill learning gaps with an aim to accerelate the learning experience</div>
+                            <div class="h4d">Lessons are self-paced, flexible and used to fill learning gaps with an aim to accelerate the learning experience</div>
                         </div>
                     </div>
                     <div class="space"></div>
@@ -61,7 +68,7 @@
                         <div><img src="../pic/icons8-math-64.png"></div>
                         <div class="h3d">
                             <div><h3>Vast content</h3></div>
-                            <div class="h4d"> Created from standarized test and work sheets across global resources. It's a free content library for any students to explore</div>
+                            <div class="h4d"> Created from standardized test and work sheets across global resources. It's a free content library for any students to explore</div>
                         </div>
                     </div>
                     <div class="space"></div>
@@ -71,7 +78,7 @@
                         <div><img src="../pic/icons8-math-64.png"></div>
                         <div class="h3d">
                             <div><h3>Peer connection</h3></div>
-                            <div class="h4d"> Students can collaborate with each other through groups and networks used to promote better material understanding</div>
+                            <div class="h4d"> Students can collaborate with each other through group networks used to promote better material understanding</div>
                         </div>
                         <div class="space"></div>
                     </div>

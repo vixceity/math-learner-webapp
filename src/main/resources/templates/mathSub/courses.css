@@ -37,6 +37,7 @@ body {
     background: linear-gradient(90deg, #141C2B, #1C273B, #23314C);
     font-family: Ariel, sans-serif;
     color: #fff;
+    width: 100%;
 }
 .hero {
     background: url("https://thumbs.dreamstime.com/b/retro-pixel-art-landscape-retro-pixel-art-landscape-nostalgic-bit-game-interface-throwback-to-classic-gaming-nostalgic-401612632.jpg") center/cover no-repeat;
@@ -224,9 +225,10 @@ body {
 .exercise-btn:hover {
     background: #394155;
 }
+
 @media screen and (max-width: 768px) {
 .body {
-min-width: 100vw;
+width: auto;
 display: flex;
 flex-direction: column;
 align-items: center;
