@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Numbl</title>
+    <link rel="stylesheet" th:href="@{/css/index.css}">
+    <script src="styles/index.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+<button class="menu-btn" id="open-sidebar-button" onclick="openSidebar()">
+    <i class='bx bx-menu'></i>
+</button>
+<nav id="navbar">
+    <div class="bar-items">
+        <div class="Logo">
+            <a><button class="close-btn" id="close-sidebar-button" onclick="closeSidebar()"><i class='bx bx-x'></i> </button></a>
+            <a href="index.html"><div class="logo">Numbl</div></a>
+        </div>
+        <div class="nav-item">
+            <a href="styles/About.html">About</a>
+            <a href="mathSub/courses.html">Courses</a>
+            <a href="styles/Signup.html">Login</a>
+        </div>
+    </div>
+</nav>
+<section class="hero">
+    <div class="hero-container"></div>
+    <div class="column-left">
+        <h1>Start Your Math Journey Today</h1>
+        <p>The most connective way to learn math</p>
+        <a href="styles/About.html"><button class="learn-more">Learn More</button></a>
+    </div>
+</section>
+<section class="explore-course">
+    <div class="course-container">
+        <div class="course-title">
+            <h2>
+                <p>Venture through the world of math</p>
+            </h2>
+            <p class="course-descript"> Learn different branches of math through course proressions</p>
+        </div>
+        <div class="course-explore">
+            <div class="class-tag"> <a href="mathSub/courses.html"><button class="class-tags">Explore All Courses</button></a>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="why">
+    <div class="reason-container">
+        <div class="reason">
+            <h2 class="reason-title">Why Numbl works</h2>
+            <div class="reason-list">
+                <div class="r1">
+                    <div class="r1-container">
+                        <div><img src="pic/icons8-math-64.png"></div>
+                        <div class="h3d">
+                            <div><h3>Personalized learning</h3></div>
+                            <div class="h4d">Lessons are self-paced, flexible and used to fill learning gaps with an aim to accelerate the learning experience</div>
+                        </div>
+                    </div>
+                    <div class="space"></div>
+                </div>
+                <div class="r2">
+                    <div class="r2-container">
+                        <div><img src="pic/icons8-math-64.png"></div>
+                        <div class="h3d">
+                            <div><h3>Vast content</h3></div>
+                            <div class="h4d"> Created from standardized test and work sheets across global resources. It's a free content library for any students to explore</div>
+                        </div>
+                    </div>
+                    <div class="space"></div>
+                </div>
+                <div class="r3">
+                    <div class="r3-container">
+                        <div><img src="pic/icons8-math-64.png"></div>
+                        <div class="h3d">
+                            <div><h3>Peer connection</h3></div>
+                            <div class="h4d"> Students can collaborate with each other through group networks used to promote better material understanding</div>
+                        </div>
+                        <div class="space"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="practice">
+    <div class="practice-container">
+        <div class="skill-text">
+            <h2>Practice your math skill</h2>
+            <p class="skill">Take your skills to the next level by completing challenges and lessons designed around helping you apply your knowledge to real-world problems</p>
+        </div>
+        <div></div>
+    </div>
+</section>
+<section class="collaborate">
+    <div class="collaborate-container">
+        <div class="skill-text">
+            <h2>Connect with friends along the way</h2>
+            <p class="skill">Math is much more enjoyable with friends. Join our community through live groups and leaderboards. Collaborate together on hard lesson and projects meant to expand your knowledge and passion for math. </p>
+        </div>
+        <div></div>
+    </div>
+</section>
+<section class="join">
+    <div class="join-container">
+        <div>
+            <h2>
+                Join Us today
+            </h2>
+        </div>
+        <div class="button-sign">
+            <a href="styles/Signup.html" class="btn-signup">
+                Sign Up
+            </a>
+        </div>
+    </div>
+</section>
+</body>
+
+</html>
