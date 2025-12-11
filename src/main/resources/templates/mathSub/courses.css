@@ -40,7 +40,7 @@ body {
     background: linear-gradient(90deg, #141C2B, #1C273B, #23314C);
     font-family: Ariel, sans-serif;
     color: #fff;
-    width: 100%;
+    overflow-x: hidden; /* Prevent horizontal scroll */
 }
 main {
     flex-grow: 1;
@@ -227,14 +227,26 @@ main {
     background: #394155;
 }
 
+
 @media (max-width: 768px) {
+    nav {
+        padding: 0 1rem;
+    }
     .hero {
         padding-left: 0;
         padding-right: 0;
     }
-
+    .hero-content {
+        max-width: 100%;
+    }
     .hero h1 {
         font-size: 28px;
+    }
+
+    .section-title {
+        margin-left: 0; 
+        text-align: center;
+        font-size: 20px;
     }
 
     .course-grid {
@@ -246,9 +258,5 @@ main {
 
     .course-card {
         border-radius: 0;
-    }
-
-    .section-title {
-        font-size: 20px;
     }
 }
