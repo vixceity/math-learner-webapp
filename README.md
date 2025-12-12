@@ -1,1 +1,2 @@
-To access our web design, install the git clone link (https://github.com/vixceity/math-learner-webapp.git). To access our more in-depth files, please navigate to the "target/classes" folder to the left. From there use the drop down to access our "templates" folder. Listed below are our main files. Files ending in ".html" are our main layout files, files ending in ".css" are our coding files and files ending in ".js" are our animation files. Additionally, the images used in our project can be found underneath the "pic" folder.
+To access our web design, go to https://math-learner-webapp.onrender.com/
+In the login page, the working login credentials are "user" for username, and "password" for password
