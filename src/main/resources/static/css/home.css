@@ -1,0 +1,119 @@
+body {
+    margin: 0;
+    background-color: #0D111C;
+    color: white;
+    font-family: "Pixelify Sans",sans-serif;
+}
+nav {
+    height: 100px;
+    background: #33466E;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 max(2rem, calc((100vw - 1300px) / 2));
+    border-bottom: 4px solid #23314C;
+    z-index: 10;
+
+    position: sticky;
+    top: 0;
+    width: 95%;
+}
+p{
+display: flex;
+align-items: center;
+text-align: center;
+}
+.logo {
+    color: #FFFCFA;
+    font-size: 2rem;
+    font-weight: bold;
+}
+nav a {
+    text-decoration: none;
+    color: #FFFCFA;
+}
+.nav-item {
+    font-size: 1.5rem;
+    display: flex;
+    gap: 1.5rem;
+}
+.page {
+    display: flex;
+    padding: 20px;
+    gap: 40px;
+}
+
+
+.penguin-box {
+    background: #141C2B;
+    padding: 20px;
+    width: 65%;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.speech-bubble {
+    background: #1C273B;
+    padding: 10px 20px;
+    border-radius: 8px;
+    position: absolute;
+    top: 10px;
+    text-align: center;
+    font-family: "Pixelify Sans";
+}
+
+.bubble-arrow {
+    width: 0;
+    height: 0;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-top: 12px solid #33466E;
+    margin: 0 auto;
+}
+
+.penguin-animation {
+    margin-top: 70px;
+    width: 100%;
+    height: 420px;
+    background: #0b0f19;
+    border: 3px solid #23314C;
+    border-radius: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.penguin-animation img {
+    width: 260px;
+    image-rendering: pixelated;
+}
+
+
+.right-side {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.info-card {
+    background: #1C273B;
+    padding: 20px;
+    border-radius: 12px;
+}
+
+.page {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#penguinCanvas {
+    width: 100%;
+    height: 100%;
+    image-rendering: pixelated;
+}

@@ -10,4 +10,19 @@ public class HomeController {
     public String home(Model model){
         return "index";
     }
+
+    @GetMapping("/signup")
+    public String login(Model model) {
+        return "Signup";
+    }
+
+    @GetMapping("/about")
+    public String about(Model model) {
+        return "About";
+    }
+
+    @GetMapping("/courses")
+    public String courses(Model model) {
+        return "courses";
+    }
 }

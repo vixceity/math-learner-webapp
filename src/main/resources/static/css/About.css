@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "Pixelify Sans";
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #23314C;
+}
+
+nav {
+    height: 100px;
+    background: #33466E;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 max(2rem, calc((100vw - 1300px) / 2));
+    border-bottom: 4px solid #23314C;
+    z-index: 10;
+    width: 100%;
+}
+
+.logo {
+    color: #FFFCFA;
+    font-size: 2rem;
+    font-weight: bold;
+
+}
+
+nav a {
+    text-decoration: none;
+    color: #FFFCFA;
+}
+
+.nav-item {
+    font-size: 1.5rem;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.about {
+    flex-grow: 1;
+    width: 100%;
+    padding: 2rem 1rem;
+    background-color: #23314C;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main {
+    width: 1130px;
+    max-width: 95%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 2rem;
+}
+
+.about img {
+    height: auto;
+    width: 420px;
+    max-width: 100%;
+}
+
+.about-text {
+    width: 550px;
+    max-width: 100%;
+}
+
+.about-text h1 {
+    color: #FFFCFA;
+    font-size: 5rem;
+    text-transform: capitalize;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.about-text h5 {
+color: #FFFCFA;
+font-size: 25px;
+text-transform: captialize;
+margin-bottom: 25px;
+letter-spacing: 2px;
+margin-left: 80px;
+display: flex;
+flex-direction: row;
+text-align: center;
+}
+.about-text p {
+color: #FFFCFA;
+letter-spacing: 1px;
+line-height: 28px;
+font-size: 10px;
+margin-bottom: 45px;
+}
+@media (max-width : 1000px) {
+.main {
+flex-direction: column;
+}
+.about {
+height: auto;
+}
+}
+@media (max-width : 500px) {
+.main {
+flex-direction: column;
+}
+.about {
+height: auto;
+}
+}
+@media screen and (max-width: 768px) and (orientation: portrait) {
+.main {
+width: 100%;
+height: auto;
+display: flex;
+flex-direction: column;
+align-items: center;
+over-flow: hidden;
+}
+
+.about-text p {
+    color: #FFFCFA;
+    letter-spacing: 1px;
+    line-height: 1.75;
+    font-size: 1rem;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .main {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-text h1 {
+        font-size: 3rem;
+    }
+
+    .about-text h5 {
+        font-size: 1.25rem;
+    }
+
+    .about-text p {
+        font-size: 0.9rem;
+    }
+    .logo {
+    padding-right: 1rem;}
+    }
+    .nav-items {
+    font-size: 1rem;}
+    .nav {
+    padding: none;
+    }
+    .about-text h5 {
+    align-items: center;
+    text-align: center;
+    margin: 0;
+    font-weight: bold;
+    padding-left: 1.25rem;
+    margin-bottom: 1rem;
+    }
+}

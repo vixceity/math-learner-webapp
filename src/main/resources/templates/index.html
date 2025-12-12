@@ -19,12 +19,12 @@
     <div class="bar-items">
         <div class="Logo">
             <a><button class="close-btn" id="close-sidebar-button" onclick="closeSidebar()"><i class='bx bx-x'></i> </button></a>
-            <a href="index.html"><div class="logo">Numbl</div></a>
+            <a href="/"><div class="logo">Numbl</div></a>
         </div>
         <div class="nav-item">
-            <a href="styles/About.html">About</a>
-            <a href="mathSub/courses.html">Courses</a>
-            <a href="styles/Signup.html">Login</a>
+            <a th:href="@{/about}">About</a>
+            <a th:href="@{/courses}">Courses</a>
+            <a th:href="@{/signup}">Login</a>
         </div>
     </div>
 </nav>
