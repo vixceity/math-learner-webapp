@@ -25,4 +25,5 @@ public class HomeController {
     public String courses(Model model) {
         return "courses";
     }
+
 }
