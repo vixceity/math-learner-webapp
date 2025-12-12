@@ -1,0 +1,331 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Pixelify Sans", sans-serif;
+}
+nav {
+    height: 100px;
+    background: #33466E;
+    display: flex;
+    align-items: center;
+    padding: 0 max(2rem, calc((100vw - 1300px) / 2));
+    border-bottom: 5px solid #23314C;
+    z-index: 10;
+    position: sticky;
+    top: 0;
+    width: 100%;
+}
+body {
+    background-color: #33466E;
+}
+.bar-items {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+.Logo {
+padding-left: 2rem;
+display: flex;
+text-align: left;
+}
+.menu-btn, .close-btn {
+    font-size: 2rem;
+    background-color: transparent;
+    cursor: pointer;
+    display: none;
+    z-index: 11;
+}
+.menu-btn i, .close-btn i {
+    color: #FFFCFA !important;
+}
+p{
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+.logo {
+    color: #FFFCFA;
+    font-size: 2rem;
+    font-weight: bold;
+}
+nav a {
+    text-decoration: none;
+    color: #FFFCFA;
+}
+.nav-item {
+    font-size: 1.5rem;
+    display: flex;
+    gap: 1.5rem;
+}
+.hero {
+    background: #33466E;
+    padding: 4rem 0;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.hero-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+}
+.column-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color:white;
+    padding-top: 100px;
+}
+.column-left h1 {
+    margin-bottom: 1rem;
+    font-size: 3rem;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #FFFCFA;
+}
+.column-left p {
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+    line-height: 1.5;
+    color: #CBD5E1;
+}
+button {
+    padding: 1rem 3rem;
+    font-size: 1rem;
+    border: none;
+    color: #FFFCFA;
+    background: #2A3D5E;
+    cursor: pointer;
+    border-radius: 10px;
+    letter-spacing: 2px;
+    text-decoration: none;
+    text-align: center;
+}
+.learn-more {
+    letter-spacing: 2px;
+}
+button:hover {
+    background: #23314C;
+    color: #FFFCFA;
+}
+.explore-course, .why, .practice, .collaborate, .join {
+    background: #020617;
+    padding: 8rem 0;
+    align-items: center;
+    border-color: black;
+}
+.course-container, .reason-container, .practice-container, .collaborate-container, .join-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+.hero-container, .course-container, .practice-container, .collaborate-container, .join-container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+}
+.reason-container {
+    align-items: center;
+    padding-left: 1.5rem;
+    text-align: center;
+    max-width: 1300px;
+    margin: 0 auto;
+    display: flex;
+}
+.course-title {
+    text-align: center;
+}
+.course-title h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #FFFCFA;
+}
+.course-descript {
+    font-size: 1.2rem;
+    color: #CBD5E1;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+.class-tags {
+    background-color: #23314C;
+    color: #FFFCFA;
+}
+.class-tags:hover {
+    background-color: #1C273B;
+    color: #FFFCFA;
+}
+.reason-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem;
+}
+.reason {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+.reason-title {
+    font-size: 2.5rem;
+    text-align: center;
+    color: #FFFCFA;
+}
+.reason-list {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+.r1, .r2, .r3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: #FFFCFA;
+    max-width: 300px;
+}
+.r1-container, .r2-container, .r3-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.h3d h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+.h4d {
+    font-family: "Pixelify Sans", sans-serif;
+    color: #CBD5E1;
+    gap: 2rem;
+}
+.skill-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #FFFCFA;
+    text-align: center;
+}
+.skill {
+    font-size: 1.2rem;
+    color: #CBD5E1;
+    max-width: 750px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.join-container h2 {
+    font-size: 2.5rem;
+    color: #FFFCFA;
+}
+.button-sign {
+    margin-top: 2rem;
+}
+.btn-signup {
+    padding: 1rem 3rem;
+    font-size: 1rem;
+    border: none;
+    color: #FFFCFA;
+    background: #23314C;
+    cursor: pointer;
+    border-radius: 10px;
+    text-decoration: none;
+    letter-spacing: 2px;
+}
+.btn-signup:hover {
+    background: #1C273B;
+    color: #FFFCFA;
+}
+
+@media screen and (max-width: 850px) {
+    .hero-container {
+        width: 100%;
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .column-left {
+        align-items: center;
+    }
+    .reason-list {
+        flex-direction: column;
+        gap: 4rem;
+        align-items: center;
+        text-align: center;
+    }
+}
+#open-sidebar-button {
+    display: none;
+    background: #33466E;
+    border: none;
+    padding: 1em;
+    margin-left: auto;
+    cursor: pointer;
+}
+#close-sidebar-button {
+    background: none;
+    border: none;
+    padding: 1em;
+    cursor: pointer;
+}
+@media screen and (max-width: 700px) {
+    .nav-item {
+        display: none;
+    }
+
+    nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        height: 100vh;
+        width: min(15em, 100%);
+        z-index: 10;
+        background: #33466E;
+        border-left: 1px solid #23314C;
+        transition: right 300ms ease-in-out;
+        flex-direction: column;
+    }
+    nav.show {
+        right: 0;
+        top: 0;
+       .Logo {
+           flex-direction: left;
+           text-align: center;
+           padding: 0;
+           margin-right: 3rem;
+           margin-bottom: 2rem;}
+    }
+    nav .bar-items {
+        width: 100%;
+        flex-direction: column;
+        top: 0;
+        height: auto;
+        padding: 2rem 0;
+        border-bottom: none;
+        position: static;
+    }
+    nav a {
+        width: 100%;
+        padding-left: 2.5rem;
+    }
+    nav .nav-item {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+    nav .nav-item a {
+        padding: 1rem 2.5rem;
+    }
+
+}

@@ -1,0 +1,36 @@
+body {
+    font-family: "Pixelify Sans", sans-serif;
+    background: #0f1624;
+    color: white;
+    margin: 0;
+    padding: 20px;
+}
+
+.back-btn {
+    display: inline-block;
+    background: #2d81f7;
+    padding: 10px 16px;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.back-btn:hover {
+    background: #2466c4;
+}
+
+.notes-container {
+    max-width: 900px;
+    margin: auto;
+}
+
+.notes-content {
+    background: #1a2232;
+    padding: 20px;
+    border-radius: 8px;
+    line-height: 1.6;
+    font-size: 18px;
+    border: 2px solid #2c394f;
+}

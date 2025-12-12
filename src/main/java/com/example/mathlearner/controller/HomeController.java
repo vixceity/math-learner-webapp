@@ -26,4 +26,9 @@ public class HomeController {
         return "courses";
     }
 
+    @GetMapping("/algebra1")
+    public String algebra1(Model model) {
+        return "algebra1";
+    }
+
 }
