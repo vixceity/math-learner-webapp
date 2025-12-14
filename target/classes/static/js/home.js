@@ -31,7 +31,7 @@ window.onload = () => animate();
 
 
 
-let username = "Vixceity";
+let username = "user";
 
 // Update welcome message
 document.getElementById("welcome-text").textContent = `Welcome back, ${username}!`;

@@ -6,8 +6,8 @@ import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class HomeController {
-    @GetMapping("/")
-    public String home(Model model){
+    @GetMapping("/") //this is the home page
+    public String index(Model model){
         return "index";
     }
 
@@ -30,5 +30,33 @@ public class HomeController {
     public String algebra1(Model model) {
         return "algebra1";
     }
+
+    @GetMapping("/notes")
+    public String notes(Model model) {
+        return "notes";
+    }
+
+    @GetMapping("geometry")
+    public String geometry(Model model) {
+        return "geometry";
+    }
+
+    @GetMapping("algebra2")
+    public String algebra2(Model model) {
+        return "algebra2";
+    }
+    @GetMapping("home")
+    public String home(Model model) {
+        return "home";
+    }
+
+    @GetMapping("calendar")
+    public String calendar(Model model) {
+        return "calendar";
+    }
+
+
+
+
 
 }

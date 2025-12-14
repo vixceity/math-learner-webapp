@@ -52,7 +52,7 @@ public class SecurityConfig {
                 // Custom login page at /login (GET renders templates/login.html, POST processes credentials)
                 .formLogin(form -> form
                         .loginPage("/signup")
-                        .defaultSuccessUrl("/", true)
+                        .defaultSuccessUrl("/home", true)
                         .permitAll()
                 )
 
@@ -74,4 +74,5 @@ public class SecurityConfig {
 
         return http.build();
     }
+
 }

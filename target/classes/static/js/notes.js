@@ -18,5 +18,5 @@ if (notesData[subject] && notesData[subject][unit]) {
 
 // BACK BUTTON
 document.getElementById("back-btn").onclick = () => {
-    window.location.href = `../${subject}.html`;
+    window.location.href = `/${subject}`;
 };
