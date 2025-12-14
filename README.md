@@ -1,2 +1,2 @@
 To access our web design, go to https://math-learner-webapp.onrender.com/
-In the login page, the working login credentials are "user" for username, and "password" for password.
+In the login page, the working login credentials are "user" for username, and "password" for password. When the login is successful, you will be directed to the user dashboard.
