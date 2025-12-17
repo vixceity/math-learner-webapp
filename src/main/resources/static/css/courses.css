@@ -118,7 +118,7 @@ main {
 }
 
 .course-tag {
-    background-color: #2d81f7;
+    background-color: #4a6fa5;
     padding: 4px 10px;
     border-radius: 8px;
     font-size: 12px;
@@ -185,7 +185,7 @@ main {
 
 /* excercise buttons */
 .exercise-btn {
-    background: #2d81f7;
+    background: #4a6fa5;
     padding: 10px;
     border-radius: 6px;
     text-decoration: none;
@@ -196,7 +196,7 @@ main {
 }
 .exercise-btn:hover {
     transform: translateY(-3px);
-    background: #2466c4;
+    background: #4a6fa5;
 }
 .subtopics {
     margin-top: 10px;
