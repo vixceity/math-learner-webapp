@@ -1,47 +1,95 @@
+/* ✅ prevents width+padding from overflowing the viewport */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+nav {
+    /* keep your colors/border */
+    background: #33466E;
+    border-bottom: 4px solid #23314C;
+
+    position: sticky;
+    top: 0;
+    z-index: 10;
+
+    /* ✅ flexible sizing */
+    width: 100%;          /* was 95% */
+    min-height: 100px;    /* instead of fixed height */
+    padding: 0 clamp(1rem, 2vw, 2rem);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    /* ✅ if the screen is tight, wrap instead of hiding links */
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+/* optional: logo scales down a bit on small screens */
+.logo {
+    color: #FFFCFA;
+    font-size: clamp(1.4rem, 1.1rem + 1vw, 2rem);
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.nav-item {
+    font-size: clamp(1.1rem, 1rem + 0.6vw, 1.5rem);
+    display: flex;
+    gap: 1.5rem;
+
+    /* ✅ allows links to wrap instead of going off-screen */
+    flex-wrap: wrap;
+    justify-content: flex-end;
+
+    /* ✅ pushes this group to the far right */
+    margin-left: auto;
+}
+
+/* On very small screens, stack it neatly */
+@media (max-width: 520px) {
+    .nav-item {
+        width: 100%;
+        justify-content: space-between;
+        gap: 0.75rem;
+    }
+}
+
+
+
 body {
     margin: 0;
     background-color: #0D111C;
     color: white;
     font-family: "Pixelify Sans",sans-serif;
 }
-nav {
-    height: 100px;
-    background: #33466E;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 max(2rem, calc((100vw - 1300px) / 2));
-    border-bottom: 4px solid #23314C;
-    z-index: 10;
 
-    position: sticky;
-    top: 0;
-    width: 95%;
-}
 p{
 display: flex;
 align-items: center;
 text-align: center;
 }
-.logo {
-    color: #FFFCFA;
-    font-size: 2rem;
-    font-weight: bold;
-}
+
 nav a {
     text-decoration: none;
     color: #FFFCFA;
 }
-.nav-item {
-    font-size: 1.5rem;
-    display: flex;
-    gap: 1.5rem;
+
+
+@media (max-width: 900px) {
+    .page { flex-direction: column; }
+    .penguin-box, .right-side { width: 100%; }
 }
-.page {
+.page{
     display: flex;
-    padding: 20px;
     gap: 40px;
+    padding: 20px;
+
+    max-width: 1200px;
+    margin: 0 auto;
 }
+
 
 
 .penguin-box {
@@ -107,10 +155,6 @@ nav a {
     border-radius: 12px;
 }
 
-.page {
-    max-width: 1200px;
-    margin: 0 auto;
-}
 
 #penguinCanvas {
     width: 100%;
