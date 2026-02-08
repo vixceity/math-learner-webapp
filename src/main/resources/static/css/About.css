@@ -15,7 +15,7 @@ body {
 }
 
 nav {
-    height: 100px;
+    height: 75px;
     background: #33466E;
     display: flex;
     justify-content: space-between;

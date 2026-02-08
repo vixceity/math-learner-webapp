@@ -14,7 +14,7 @@ nav {
 
     /* ✅ flexible sizing */
     width: 100%;          /* was 95% */
-    min-height: 100px;    /* instead of fixed height */
+    min-height: 75px;    /* instead of fixed height */
     padding: 0 clamp(1rem, 2vw, 2rem);
 
     display: flex;
