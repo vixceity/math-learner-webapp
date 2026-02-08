@@ -51,12 +51,9 @@ public class HomeController {
     }
 
     @GetMapping("calendar")
-    public String calendar(Model model) {
-        return "calendar";
-    }
+    public String calendar(Model model) {return "calendar";}
 
-
-
-
-
+    @GetMapping("/course")
+    public String course(Model model) {return "course";}
+    
 }
