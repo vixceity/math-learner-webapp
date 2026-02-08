@@ -1,0 +1,15 @@
+# Exported from Render on 2026-02-08T19:45:14Z
+version: "1"
+services:
+  - type: web
+    name: numbl
+    runtime: docker
+    repo: https://github.com/vixceity/math-learner-webapp
+    branch: dev
+    plan: free
+    region: oregon
+    dockerContext: .
+    dockerfilePath: ./Dockerfile
+    autoDeployTrigger: "off"
+    previews:
+      generation: automatic
