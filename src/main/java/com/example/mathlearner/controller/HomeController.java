@@ -55,5 +55,5 @@ public class HomeController {
 
     @GetMapping("/course")
     public String course(Model model) {return "course";}
-    
+
 }
