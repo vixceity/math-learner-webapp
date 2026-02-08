@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/courses.css">
+</head>
+
+<body>
+
+<nav>
+    <a href="/home"><div class="logo">Numbl</div></a>
+    <div class="nav-item">
+        <a href="/courses">Courses</a>
+        <a href="/calendar">Join Live</a>
+        <a href="/">Log Out</a>
+    </div>
+</nav>
+
+<div class="page">
+
+    <div class="penguin-box">
+        <div class="speech-bubble">
+            <p id="welcome-text">Welcome back, user!</p>
+            <div class="bubble-arrow"></div>
+
+        </div>
+
+
+        <div class="penguin-animation">
+            <canvas id="penguinCanvas"></canvas>
+        </div>
+
+
+    </div>
+
+
+    <div class="right-side">
+
+        <div class="info-card">
+            <h3>🔥 Streak</h3>
+            <p id="streak-count">5 days</p>
+        </div>
+
+        <div class="info-card">
+            <h3>📘 Currently Practicing</h3>
+            <p id="current-subject">Algebra</p>
+        </div>
+
+        <div class="info-card">
+            <h3>📅 Events</h3>
+            <p>No current events</p>
+        </div>
+
+    </div>
+
+</div>
+
+<script src="/js/home.js"></script>
+
+</body>
+</html>
