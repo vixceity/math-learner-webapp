@@ -33,9 +33,10 @@ nav {
 p {
     display: flex;
     align-items: center;
-    text-align: center;
+    text-align: left;
     font-family: "Jersey 10";
     letter-spacing: 2px;
+    text-size: 1rem;
 }
 
 .logo {
