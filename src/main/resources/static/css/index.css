@@ -1,5 +1,10 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Jersey+10&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;700&display=swap');
+.jersey-10-regular {
+  font-family: "Jersey 10", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
 
 * {
     box-sizing: border-box;
@@ -48,6 +53,7 @@ p{
     display: flex;
     align-items: center;
     text-align: center;
+    font-family: "Jersey 10";
 }
 .logo {
     color: #FFFCFA;
