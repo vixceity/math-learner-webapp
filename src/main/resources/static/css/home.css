@@ -1,3 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Unna:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+.nunito-sans-<uniquifier> {
+  font-family: "Nunito Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100,
+    "YTLC" 500;
+}
+.unna-regular {
+  font-family: "Unna", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.unna-bold {
+  font-family: "Unna", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.unna-regular-italic {
+  font-family: "Unna", serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.unna-bold-italic {
+  font-family: "Unna", serif;
+  font-weight: 700;
+  font-style: italic;
+}
 /* ✅ prevents width+padding from overflowing the viewport */
 *, *::before, *::after {
     box-sizing: border-box;
@@ -62,9 +96,13 @@ body {
     margin: 0;
     background-color: #0D111C;
     color: white;
-    font-family: "Pixelify Sans",sans-serif;
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: 500;
 }
-
+.h3 {
+    font-family: "Unna", serif;
+     font-weight: 700;
+      }
 p{
 display: flex;
 align-items: center;

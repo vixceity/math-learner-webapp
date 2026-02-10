@@ -1,18 +1,43 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
-.noto-sans-<uniquifier> {
-  font-family: "Noto Sans", sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Unna:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+.nunito-sans-<uniquifier> {
+  font-family: "Nunito Sans", sans-serif;
   font-optical-sizing: auto;
   font-weight: <weight>;
   font-style: normal;
   font-variation-settings:
-    "wdth" 100;
+    "wdth" 100,
+    "YTLC" 500;
+}
+.unna-regular {
+  font-family: "Unna", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.unna-bold {
+  font-family: "Unna", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.unna-regular-italic {
+  font-family: "Unna", serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.unna-bold-italic {
+  font-family: "Unna", serif;
+  font-weight: 700;
+  font-style: italic;
 }
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: "Pixelify Sans", sans-serif;
+    font-family: "Unna", serif;
+    font-weight: 700;
 }
  nav {
     height: 75px;
@@ -33,7 +58,8 @@
     text-decoration: none;
     color: #FFFFFF;
     padding: 0 .75rem;
-        font-family: "Pixelify Sans";
+        font-family: "Unna", serif;
+        font-weight: 700;
     }
     .nav-item {
     font-size: 1.5rem;
@@ -48,7 +74,8 @@ body {
     min-height: 100vh;
     margin: 0;
     background: linear-gradient(90deg, #141C2B, #1C273B, #23314C);
-    font-family: Ariel, sans-serif;
+    font-family: "Nunito Sans";
+    font-weight: 500;
     color: #fff;
     overflow-x: hidden; /* Prevent horizontal scroll */
 }
@@ -69,7 +96,7 @@ main {
 .hero h1 {
     font-size: 38px;
     margin-bottom: 10px;
-    font-family: "Pixelify Sans", sans-serif;
+    font-family: "Unna", serif;
 }
 
 .hero p {
@@ -85,7 +112,7 @@ main {
 .section-title {
     font-size: 22px;
     margin: 20px 0 10px 20px;
-    font-family: "Pixelify Sans", sans-serif;
+    font-family: "Unna", serif;
     display: flex;
     flex-direction: column;
     align-items: center;
