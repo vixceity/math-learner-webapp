@@ -2,7 +2,8 @@ package com.example.mathlearner.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+
 
 @Controller
 public class HomeController {
@@ -12,9 +13,8 @@ public class HomeController {
     }
 
     @GetMapping("/signup")
-    public String login(Model model) {
-        return "Signup";
-    }
+    public String signup(Model model) { return "Signup"; }
+
 
     @GetMapping("/about")
     public String about(Model model) {
@@ -36,21 +36,21 @@ public class HomeController {
         return "notes";
     }
 
-    @GetMapping("geometry")
+    @GetMapping("/geometry")
     public String geometry(Model model) {
         return "geometry";
     }
 
-    @GetMapping("algebra2")
+    @GetMapping("/algebra2")
     public String algebra2(Model model) {
         return "algebra2";
     }
-    @GetMapping("home")
+    @GetMapping("/home")
     public String home(Model model) {
         return "home";
     }
 
-    @GetMapping("calendar")
+    @GetMapping("/calendar")
     public String calendar(Model model) {return "calendar";}
 
     @GetMapping("/course")
