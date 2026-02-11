@@ -289,7 +289,11 @@ padding-left: 1rem;}
     background: #1C273B;
     color: #FFFCFA;
 }
-
+li {
+list-style: none;
+    color: #CBD5E1;
+    font-size: 1.2rem;
+}
 @media screen and (max-width: 850px) {
     .hero-container {
         width: 100%;
