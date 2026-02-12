@@ -54,6 +54,7 @@ public class AuthController {
         repo.save(new AppUser(username, email, hash));
 
         // send them to login (your login is /login)
-        return "redirect:/signup?registered";
+        return "redirect:/signup?registered=1";
+
     }
 }
