@@ -8,6 +8,8 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.config.Customizer;
+
 
 @Configuration
 @EnableWebSecurity
@@ -23,9 +25,23 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/", "/login", "/signup", "/css/**", "/js/**", "/images/**").permitAll()
-                        .anyRequest().authenticated()
+                        // public pages
+                        .requestMatchers(
+                                "/",
+                                "/about",
+                                "/courses",
+                                "/signup",
+                                "/css/**",
+                                "/js/**",
+                                "/images/**"
+                        ).permitAll()
+
+                        // protect notes
+                        .requestMatchers("/notes").authenticated()
+
+                        .anyRequest().permitAll()
                 )
+
                 .formLogin(form -> form
                         .loginPage("/signup")
                         .loginProcessingUrl("/login")
@@ -33,10 +49,23 @@ public class SecurityConfig {
                         .defaultSuccessUrl("/home", true)
                         .permitAll()
                 )
+
                 .logout(logout -> logout
-                        .logoutSuccessUrl("/")
+                        .logoutUrl("/logout")
+                        .logoutSuccessUrl("/signup?logout")
+                        .invalidateHttpSession(true)
+                        .clearAuthentication(true)
+                        .deleteCookies("JSESSIONID")
                         .permitAll()
+
+
+                )
+                .headers(headers -> headers
+                        .cacheControl(Customizer.withDefaults())
                 );
+
+
+
 
         return http.build();
     }

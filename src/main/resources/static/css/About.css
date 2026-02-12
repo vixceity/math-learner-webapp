@@ -1,44 +1,16 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Unna:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
-.nunito-sans-<uniquifier> {
-  font-family: "Nunito Sans", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: <weight>;
-  font-style: normal;
-  font-variation-settings:
-    "wdth" 100,
-    "YTLC" 500;
-}
-.unna-regular {
-  font-family: "Unna", serif;
-  font-weight: 400;
-  font-style: normal;
-}
 
-.unna-bold {
-  font-family: "Unna", serif;
-  font-weight: 700;
-  font-style: normal;
-}
 
-.unna-regular-italic {
-  font-family: "Unna", serif;
-  font-weight: 400;
-  font-style: italic;
-}
-
-.unna-bold-italic {
-  font-family: "Unna", serif;
-  font-weight: 700;
-  font-style: italic;
-}
 * {
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
     font-family: "Unna", serif;
     font-weight: 400;
-    box-sizing: border-box;
 }
+
 
 body {
     display: flex;
@@ -46,6 +18,7 @@ body {
     min-height: 100vh;
     background-color: #23314C;
 }
+
 
 nav {
     height: 75px;
@@ -55,24 +28,8 @@ nav {
     align-items: center;
     padding: 0 max(2rem, calc((100vw - 1300px) / 2));
     border-bottom: 4px solid #23314C;
-    z-index: 10;
     width: 100%;
-}
-p {
-    display: flex;
-    align-items: center;
-    text-align: left;
-    font-family: "Nunito Sans";
-    font-weight: 500;
-    letter-spacing: 2px;
-    font-size: 1rem;
-}
-
-.logo {
-    color: #FFFCFA;
-    font-size: 2rem;
-    font-weight: bold;
-
+    z-index: 10;
 }
 
 nav a {
@@ -80,11 +37,29 @@ nav a {
     color: #FFFCFA;
 }
 
+.logo {
+    color: #FFFCFA;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
 .nav-item {
     font-size: 1.5rem;
     display: flex;
     gap: 1.5rem;
 }
+
+
+p {
+    display: flex;
+    align-items: center;
+    text-align: left;
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: 500;
+    letter-spacing: 2px;
+    font-size: 1rem;
+}
+
 
 .about {
     flex-grow: 1;
@@ -107,9 +82,9 @@ nav a {
 }
 
 .about img {
-    height: auto;
     width: 420px;
     max-width: 100%;
+    height: auto;
 }
 
 .about-text {
@@ -126,61 +101,44 @@ nav a {
 }
 
 .about-text h5 {
-color: #FFFCFA;
-font-size: 25px;
-text-transform: captialize;
-margin-bottom: 25px;
-letter-spacing: 2px;
-margin-left: 80px;
-display: flex;
-flex-direction: row;
-text-align: center;
-}
-.about-text p {
-color: #FFFCFA;
-letter-spacing: 1px;
-line-height: 28px;
-font-size: 10px;
-margin-bottom: 45px;
-}
-@media (max-width : 1000px) {
-.main {
-flex-direction: column;
-}
-.about {
-height: auto;
-}
-}
-@media (max-width : 500px) {
-.main {
-flex-direction: column;
-}
-.about {
-height: auto;
-}
-}
-@media screen and (max-width: 768px) and (orientation: portrait) {
-.main {
-width: 100%;
-height: auto;
-display: flex;
-flex-direction: column;
-align-items: center;
-over-flow: hidden;
+    color: #FFFCFA;
+    font-size: 25px;
+    text-transform: capitalize;
+    margin-bottom: 25px;
+    letter-spacing: 2px;
+    margin-left: 80px;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
 }
 
 .about-text p {
     color: #FFFCFA;
     letter-spacing: 1px;
-    line-height: 1.75;
+    line-height: 28px;
     font-size: 1rem;
-    text-align: center;
+    margin-bottom: 45px;
 }
 
-@media (max-width: 768px) {
+
+@media (max-width: 1000px) {
     .main {
         flex-direction: column;
-        text-align: center;
+    }
+
+    .about {
+        height: auto;
+    }
+}
+
+/* Mobile portrait */
+@media screen and (max-width: 768px) and (orientation: portrait) {
+    .main {
+        width: 100%;
+        height: auto;
+        flex-direction: column;
+        align-items: center;
+        overflow: hidden;
     }
 
     .about-text h1 {
@@ -189,25 +147,25 @@ over-flow: hidden;
 
     .about-text h5 {
         font-size: 1.25rem;
+        align-items: center;
+        text-align: center;
+        margin: 0 0 1rem 0;
+        font-weight: bold;
+        padding-left: 0;
     }
 
     .about-text p {
-        font-size: 0.9rem;
+        letter-spacing: 1px;
+        line-height: 1.75;
+        font-size: 0.95rem;
+        text-align: center;
     }
+
     .logo {
-    padding-right: 1rem;}
+        padding-right: 1rem;
     }
-    .nav-items {
-    font-size: 1rem;}
-    .nav {
-    padding: none;
-    }
-    .about-text h5 {
-    align-items: center;
-    text-align: center;
-    margin: 0;
-    font-weight: bold;
-    padding-left: 1.25rem;
-    margin-bottom: 1rem;
+
+    .nav-item {
+        font-size: 1rem;
     }
 }

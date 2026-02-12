@@ -1,15 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Unna:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+.nunito-sans-<uniquifier> {
+  font-family: "Nunito Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100,
+    "YTLC" 500;
+}
+.unna-regular {
+  font-family: "Unna", serif;
+  font-weight: 400;
+  font-style: normal;
+}
 
-@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;700&display=swap');
+.unna-bold {
+  font-family: "Unna", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.unna-regular-italic {
+  font-family: "Unna", serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.unna-bold-italic {
+  font-family: "Unna", serif;
+  font-weight: 700;
+  font-style: italic;
+}
 
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: "Pixelify Sans", sans-serif;
+    font-family: "Unna", serif;
+    font-weight: 700;
 }
 nav {
-    height: 100px;
+    height: 75px;
     background: #33466E;
+
     display: flex;
     align-items: center;
     padding: 0 max(2rem, calc((100vw - 1300px) / 2));
@@ -20,7 +54,7 @@ nav {
     width: 100%;
 }
 body {
-    background-color: #33466E;
+    background: #33466E;
 }
 .bar-items {
     display: flex;
@@ -47,6 +81,9 @@ p{
     display: flex;
     align-items: center;
     text-align: center;
+    font-family: "Nunito Sans";
+    font-weight: 500;
+    letter-spacing: 2px;
 }
 .logo {
     color: #FFFCFA;
@@ -202,6 +239,11 @@ button:hover {
     flex-direction: column;
     align-items: center;
 }
+.r1 {
+padding-right: 1rem;
+}
+.r3 {
+padding-left: 1rem;}
 .h3d h3 {
     font-size: 1.5rem;
     margin-bottom: 0.5rem;
@@ -247,7 +289,11 @@ button:hover {
     background: #1C273B;
     color: #FFFCFA;
 }
-
+li {
+list-style: none;
+    color: #CBD5E1;
+    font-size: 1.2rem;
+}
 @media screen and (max-width: 850px) {
     .hero-container {
         width: 100%;
