@@ -289,37 +289,40 @@ padding-left: 1rem;}
     background: #1C273B;
     color: #FFFCFA;
 }
-.footer {
-    background: #020617;
-    padding: 2rem 0;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+.ka-footer {
+  background-color: #0a2a43; /* deep blue similar to Khan Academy */
+  color: #ffffff;
+  padding: 40px 0;
+  font-family: "Nunito Sans", sans-serif;
 }
-footer-note {
-    display: flex;
-    flex-direction: column;
-    justify-content: left;
-    align-items: left;
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  padding: 0 20px;
 }
-footer-links {
-    display: block;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    }
-footer-list {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    align-items: right;
-    }
-li {
-list-style: none;
-    color: #CBD5E1;
-    font-size: 1.2rem;
+
+.footer-column {
+  flex: 1 1 200px;
+  min-width: 180px;
 }
+
+.footer-column h4 {
+  font-size: 16px;
+  margin-bottom: 12px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
 a {
     text-decoration: none;
     color: #FFFCFA;
