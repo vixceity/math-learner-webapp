@@ -1,8 +1,4 @@
-.jersey-10-regular {
-  font-family: "Pixelify Sans", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
+
  * {
  margin: 0;
  padding: 0;
@@ -16,7 +12,7 @@ align-items: center;
 min-height: 100vh;
 background: linear-gradient(90deg, #0D111C, #141C2B, #1C273B, #23314C);
 background-size: 400% 400%;
-animation: gradient 15s ease infinite;
+    animation: gradientBG 15s ease infinite;
 }
 @keyframes gradientBG {
 0%{background-position: 0% 50%;}
@@ -30,7 +26,7 @@ height: 550px;
 background: #33466E;
 border-radius: 30px;
 box-shadow: 0 0 30px rgba(0, 0, 0, .2);
-marginL: 20px;
+    margin-left: 20px;
 overflow: hidden;
 }
 .form-box {
@@ -57,8 +53,8 @@ visibility: visible;
 .form-box.register {
 visibility: hidden;
 }
-.form {
-width: 100%
+form {
+width: 100%;
 }
 .container h1 {
 position: relative;
@@ -116,10 +112,10 @@ font-size: 16px;
 color: white;
 font-weight: 600;
 }
-.container p {
-display: flex;
-justify-content: center;
-}
+ .container p {
+     text-align: center;
+ }
+
 .toggle-box {
 position: absolute;
 width: 100%;
@@ -188,6 +184,25 @@ background: transparent;
 border: 2px solid white;
 box-shadow: none;
 }
+.success-msg,
+.error-msg {
+    margin: 0 0 28px;
+    padding: 10px 12px;
+    border-radius: 8px;
+    display: block;
+    text-align: center;
+    font-size: 14px;
+}
+
+.success-msg {
+    background: rgba(0, 255, 128, 0.12);
+    border: 1px solid rgba(0, 255, 128, 0.35);
+}
+
+.error-msg {
+    background: rgba(255, 0, 64, 0.12);
+    border: 1px solid rgba(255, 0, 64, 0.35);
+}
 
 @media screen and (max-width: 850px) {
     .container {
@@ -208,4 +223,53 @@ box-shadow: none;
     .form-box.register {
         visibility: visible;
     }
+
+    .success-msg {
+        margin: 10px 0;
+        font-size: 0.95rem;
+    }
+
+    .error-msg {
+        margin: 10px 0;
+        font-size: 0.95rem;
+    }
+    .success {
+        margin: 10px 0 0;
+        padding: 10px 12px;
+        border-radius: 8px;
+        background: rgba(0, 255, 128, 0.12);
+        border: 1px solid rgba(0, 255, 128, 0.35);
+        color: white;
+        font-size: 14px;
+    }
+
+    .error {
+        margin: 10px 0 0;
+        padding: 10px 12px;
+        border-radius: 8px;
+        background: rgba(255, 0, 64, 0.12);
+        border: 1px solid rgba(255, 0, 64, 0.35);
+        color: white;
+        font-size: 14px;
+    }
+    .success-msg { margin: 10px 0; padding: 10px; border-radius: 8px; }
+    .error-msg   { margin: 10px 0; padding: 10px; border-radius: 8px; }
+    .success-msg,
+    .error-msg {
+        margin-bottom: 24px;
+        display: block;
+        text-align: center;
+    }
+
+
+    .form-box.login .header {
+        margin-top: 10px;
+    }
+
+    .success-msg,
+    .error-msg {
+        margin-top: 0;
+        margin-bottom: 28px;
+    }
+
 }
