@@ -1,36 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Unna:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
-.nunito-sans-<uniquifier> {
-  font-family: "Nunito Sans", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: <weight>;
-  font-style: normal;
-  font-variation-settings:
-    "wdth" 100,
-    "YTLC" 500;
-}
+
+
 .unna-regular {
-  font-family: "Unna", serif;
-  font-weight: 400;
-  font-style: normal;
+    font-family: "Unna", serif;
+    font-weight: 400;
+    font-style: normal;
 }
-
 .unna-bold {
-  font-family: "Unna", serif;
-  font-weight: 700;
-  font-style: normal;
+    font-family: "Unna", serif;
+    font-weight: 700;
+    font-style: normal;
 }
-
 .unna-regular-italic {
-  font-family: "Unna", serif;
-  font-weight: 400;
-  font-style: italic;
+    font-family: "Unna", serif;
+    font-weight: 400;
+    font-style: italic;
 }
-
 .unna-bold-italic {
-  font-family: "Unna", serif;
-  font-weight: 700;
-  font-style: italic;
+    font-family: "Unna", serif;
+    font-weight: 700;
+    font-style: italic;
 }
 
 * {
@@ -40,10 +30,14 @@
     font-family: "Unna", serif;
     font-weight: 700;
 }
+
+body {
+    background: #e3a422;
+}
+
 nav {
     height: 75px;
     background: #33466E;
-
     display: flex;
     align-items: center;
     padding: 0 max(2rem, calc((100vw - 1300px) / 2));
@@ -53,73 +47,84 @@ nav {
     top: 0;
     width: 100%;
 }
-body {
-    background: #33466E;
-}
+
 .bar-items {
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 100%;
 }
+
 .Logo {
-padding-left: 2rem;
-display: flex;
-text-align: left;
+    padding-left: 2rem;
+    display: flex;
+    text-align: left;
 }
-.menu-btn, .close-btn {
+
+.menu-btn,
+.close-btn {
     font-size: 2rem;
     background-color: transparent;
     cursor: pointer;
     display: none;
     z-index: 11;
 }
-.menu-btn i, .close-btn i {
+
+.menu-btn i,
+.close-btn i {
     color: #FFFCFA !important;
 }
-p{
+
+p {
     display: flex;
     align-items: center;
     text-align: center;
-    font-family: "Nunito Sans";
+    font-family: "Nunito Sans", sans-serif;
     font-weight: 500;
     letter-spacing: 2px;
 }
+
 .logo {
     color: #FFFCFA;
     font-size: 2rem;
     font-weight: bold;
 }
+
 nav a {
     text-decoration: none;
     color: #FFFCFA;
 }
+
 .nav-item {
     font-size: 1.5rem;
     display: flex;
     gap: 1.5rem;
 }
+
 .hero {
-    background: #33466E;
+    background: #e3a422;
     padding: 4rem 0;
     height: 500px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
+
 .hero-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
 }
+
 .column-left {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color:white;
+    color: white;
     padding-top: 100px;
 }
+
 .column-left h1 {
     margin-bottom: 1rem;
     font-size: 3rem;
@@ -128,12 +133,14 @@ nav a {
     text-align: center;
     color: #FFFCFA;
 }
+
 .column-left p {
     margin-bottom: 2rem;
     font-size: 1.5rem;
     line-height: 1.5;
     color: #CBD5E1;
 }
+
 button {
     padding: 1rem 3rem;
     font-size: 1rem;
@@ -146,32 +153,50 @@ button {
     text-decoration: none;
     text-align: center;
 }
+
 .learn-more {
     letter-spacing: 2px;
 }
+
 button:hover {
     background: #23314C;
     color: #FFFCFA;
 }
-.explore-course, .why, .practice, .collaborate, .join {
+
+.explore-course,
+.why,
+.practice,
+.collaborate,
+.join {
     background: #020617;
     padding: 8rem 0;
     align-items: center;
     border-color: black;
 }
-.course-container, .reason-container, .practice-container, .collaborate-container, .join-container {
+
+.course-container,
+.reason-container,
+.practice-container,
+.collaborate-container,
+.join-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 2rem;
 }
-.hero-container, .course-container, .practice-container, .collaborate-container, .join-container {
+
+.hero-container,
+.course-container,
+.practice-container,
+.collaborate-container,
+.join-container {
     max-width: 1300px;
     margin: 0 auto;
     padding: 0 2rem;
     display: flex;
     align-items: center;
 }
+
 .reason-container {
     align-items: center;
     padding-left: 1.5rem;
@@ -180,14 +205,17 @@ button:hover {
     margin: 0 auto;
     display: flex;
 }
+
 .course-title {
     text-align: center;
 }
+
 .course-title h2 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
     color: #FFFCFA;
 }
+
 .course-descript {
     font-size: 1.2rem;
     color: #CBD5E1;
@@ -196,37 +224,46 @@ button:hover {
     flex-direction: column;
     text-align: center;
 }
+
 .class-tags {
     background-color: #23314C;
     color: #FFFCFA;
 }
+
 .class-tags:hover {
     background-color: #1C273B;
     color: #FFFCFA;
 }
+
 .reason-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 4rem;
 }
+
 .reason {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 2rem;
 }
+
 .reason-title {
     font-size: 2.5rem;
     text-align: center;
     color: #FFFCFA;
 }
+
 .reason-list {
     display: flex;
     justify-content: space-around;
     width: 100%;
 }
-.r1, .r2, .r3 {
+
+.r1,
+.r2,
+.r3 {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -234,31 +271,36 @@ button:hover {
     color: #FFFCFA;
     max-width: 300px;
 }
-.r1-container, .r2-container, .r3-container {
+
+.r1-container,
+.r2-container,
+.r3-container {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.r1 {
-padding-right: 1rem;
-}
-.r3 {
-padding-left: 1rem;}
+
+.r1 { padding-right: 1rem; }
+.r3 { padding-left: 1rem; }
+
 .h3d h3 {
     font-size: 1.5rem;
     margin-bottom: 0.5rem;
 }
+
 .h4d {
-    font-family: "Pixelify Sans", sans-serif;
+    font-family: "Nunito Sans", sans-serif;
     color: #CBD5E1;
     gap: 2rem;
 }
+
 .skill-text h2 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
     color: #FFFCFA;
     text-align: center;
 }
+
 .skill {
     font-size: 1.2rem;
     color: #CBD5E1;
@@ -267,13 +309,14 @@ padding-left: 1rem;}
     justify-content: center;
     align-items: center;
 }
+
 .join-container h2 {
     font-size: 2.5rem;
     color: #FFFCFA;
 }
-.button-sign {
-    margin-top: 2rem;
-}
+
+.button-sign { margin-top: 2rem; }
+
 .btn-signup {
     padding: 1rem 3rem;
     font-size: 1rem;
@@ -285,15 +328,59 @@ padding-left: 1rem;}
     text-decoration: none;
     letter-spacing: 2px;
 }
+
 .btn-signup:hover {
     background: #1C273B;
     color: #FFFCFA;
 }
-li {
-list-style: none;
-    color: #CBD5E1;
-    font-size: 1.2rem;
+
+.ka-footer {
+    background-color: #33466E;
+    color: #FFFCFA;
+    padding: 40px 0;
+    font-family: "Nunito Sans", sans-serif;
 }
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    padding: 0 20px;
+}
+
+.footer-column {
+    flex: 1 1 200px;
+    min-width: 180px;
+}
+
+.footer-column h4 {
+    font-size: 16px;
+    margin-bottom: 12px;
+    font-weight: bold;
+    color: #FFFCFA;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    align-items: center;
+}
+
+.footer-note {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #FFFCFA;
+}
+
+a {
+    text-decoration: none;
+    color: #FFFCFA;
+}
+
 @media screen and (max-width: 850px) {
     .hero-container {
         width: 100%;
@@ -310,6 +397,7 @@ list-style: none;
         text-align: center;
     }
 }
+
 #open-sidebar-button {
     display: none;
     background: #33466E;
@@ -318,12 +406,14 @@ list-style: none;
     margin-left: auto;
     cursor: pointer;
 }
+
 #close-sidebar-button {
     background: none;
     border: none;
     padding: 1em;
     cursor: pointer;
 }
+
 @media screen and (max-width: 700px) {
     .nav-item {
         display: none;
@@ -341,37 +431,41 @@ list-style: none;
         transition: right 300ms ease-in-out;
         flex-direction: column;
     }
+
     nav.show {
         right: 0;
-        top: 0;
-       .Logo {
-           flex-direction: left;
-           text-align: center;
-           padding: 0;
-           margin-right: 3rem;
-           margin-bottom: 2rem;}
     }
+
+    /* FIXED: this used to be illegally nested */
+    nav.show .Logo {
+        text-align: center;
+        padding: 0;
+        margin-right: 3rem;
+        margin-bottom: 2rem;
+    }
+
     nav .bar-items {
         width: 100%;
         flex-direction: column;
-        top: 0;
         height: auto;
         padding: 2rem 0;
         border-bottom: none;
         position: static;
     }
+
     nav a {
         width: 100%;
         padding-left: 2.5rem;
     }
+
     nav .nav-item {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         width: 100%;
     }
+
     nav .nav-item a {
         padding: 1rem 2.5rem;
     }
-
 }
