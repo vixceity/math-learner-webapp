@@ -1,16 +1,30 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
- * {
- margin: 0;
- padding: 0;
- box-sizing: border-box;
- font-family: "Pixelify Sans", sans-serif;
- }
+body {
+    font-family: "Nunito Sans", sans-serif; /* subheader/body font */
+}
+.header,
+.container h1,
+.form-box h1 {
+    font-family: "Unna", serif;
+    font-weight: 700;
+}
+
+p, a, input, button {
+    font-family: "Nunito Sans", sans-serif;
+}
+
+
 body {
 display: flex;
 justify-content: center;
 align-items: center;
 min-height: 100vh;
-background: linear-gradient(90deg, #0D111C, #141C2B, #1C273B, #23314C);
+background: linear-gradient(90deg, #0D111C, #141C2B, #1C273B);
 background-size: 400% 400%;
     animation: gradientBG 15s ease infinite;
 }
