@@ -294,6 +294,10 @@ list-style: none;
     color: #CBD5E1;
     font-size: 1.2rem;
 }
+a {
+    text-decoration: none;
+    color: #FFFCFA;
+    }
 @media screen and (max-width: 850px) {
     .hero-container {
         width: 100%;
