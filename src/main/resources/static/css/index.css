@@ -304,6 +304,8 @@ padding-left: 1rem;}
 .footer-links {
     display: block;
     justify-content: center;
+    flex-direction: column;
+    align-items: center;
     }
 li {
 list-style: none;
