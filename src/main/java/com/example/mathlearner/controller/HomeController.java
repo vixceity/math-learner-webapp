@@ -56,5 +56,7 @@ public class HomeController {
     @GetMapping("/course")
     public String course(Model model) {return "course";}
 
+    @GetMapping("/citation")
+    public String citation(Model model) {return "citation";}
 
 }
