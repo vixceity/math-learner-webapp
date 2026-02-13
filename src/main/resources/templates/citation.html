@@ -3,33 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Course</title>
+    <title>Citations</title>
+
+    <!-- Fonts (keep) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Unna:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+    <!-- NEW: page css -->
+    <link rel="stylesheet" href="/css/citations.css" th:href="@{/css/citations.css}">
 </head>
 
 <body>
-<h1>
-    Citation Page
-</h1>
-<h2>Website Design</h2>
-<h3><a href="https://fonts.googleapis.com">"https://fonts.googleapis.com"</a></h3>
-<p>Font library used to generate and create fonts for headings, subheadings, and paragraph variations</p>
-<h3><a href="https://boxicons.com/">https://boxicons.com/</a></h3>
-<p>Resource for icons in place of designs. Used throughout our project as an added feature to draw user's attention to important details</p>
-<h3><a href="https://color.adobe.com/create/color-wheel">https://color.adobe.com</a></h3>
-<p>A tool used to help brainstorm color schemes for themes throughout our website</p>
-<br>
-<h2>Additions</h2>
-<h3><a href="https://render.com/">https://render.com/</a></h3>
-<p>Render is a hosting site that allows users to access servicers that can be used to deploy sites. Our project is hosted on Render. In addition to hosting servers, Render provides users with CloudFlare which is an industry-leading security service which offers DNS, WAF and SSL encryption, protecting our users from data breaches.</p>
-<h3><a href="https://www.khanacademy.org/">https://www.khanacademy.org/</a></h3>
-<p>Khan Academy is an educational website that offers free courses on a variety of subjects. We used Khan Academy as a resource to help us create our own courses and lessons for our website. We also used Khan Academy as a source of inspiration for our website design and layout.</p>
-<h3><a href="https://www.flippedmath.com/">https://www.flippedmath.com/</a></h3>
-<p>Flipped math is an online resource that we used throughout our project as a guide through course. They offer specialized courses on topics like Algebra and Geometry which is our website's main focus.</p>
+<main class="citations-page">
+    <header class="citations-header">
+        <h1>Citations</h1>
+        <p>Sources and tools used to design and build Numbl.</p>
+    </header>
+
+    <section class="citations-card">
+        <h2>Website Design</h2>
+
+        <div class="citation-item">
+            <h3><a href="https://fonts.googleapis.com" target="_blank" rel="noopener">https://fonts.googleapis.com</a></h3>
+            <p>Font library used to generate and create fonts for headings, subheadings, and paragraph variations.</p>
+        </div>
+
+        <div class="citation-item">
+            <h3><a href="https://boxicons.com/" target="_blank" rel="noopener">https://boxicons.com/</a></h3>
+            <p>Resource for icons in place of designs. Used throughout our project to draw users’ attention to important details.</p>
+        </div>
+
+        <div class="citation-item">
+            <h3><a href="https://color.adobe.com/create/color-wheel" target="_blank" rel="noopener">https://color.adobe.com</a></h3>
+            <p>A tool used to brainstorm color schemes for themes throughout our website.</p>
+        </div>
+    </section>
+
+    <section class="citations-card">
+        <h2>Additions</h2>
+
+        <div class="citation-item">
+            <h3><a href="https://render.com/" target="_blank" rel="noopener">https://render.com/</a></h3>
+            <p>
+                Render is a hosting site that allows users to deploy sites. Our project is hosted on Render. In addition to hosting,
+                Render provides Cloudflare services such as DNS, SSL, and other protections.
+            </p>
+        </div>
+
+        <div class="citation-item">
+            <h3><a href="https://www.khanacademy.org/" target="_blank" rel="noopener">https://www.khanacademy.org/</a></h3>
+            <p>
+                Khan Academy is an educational website with free courses. We used it as a resource while creating our own course
+                flow and as inspiration for layout ideas.
+            </p>
+        </div>
+
+        <div class="citation-item">
+            <h3><a href="https://www.flippedmath.com/" target="_blank" rel="noopener">https://www.flippedmath.com/</a></h3>
+            <p>
+                FlippedMath is an online resource we used as a guide while organizing course topics like Algebra and Geometry.
+            </p>
+        </div>
+    </section>
+</main>
 </body>
 </html>
