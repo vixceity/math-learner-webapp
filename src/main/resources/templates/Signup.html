@@ -66,7 +66,8 @@
             </div>
             <button type="submit" class="btn">register</button>
 
-                <p th:if="${registerError}" th:text="${registerError}"></p>
+                <p th:if="${registerError}" th:text="${registerError}" class="error-msg" data-register-error></p>
+
 
                 <p class="mobile-switch">
                     Already have an account?
