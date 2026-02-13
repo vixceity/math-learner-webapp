@@ -36,8 +36,20 @@
 
 
         <div class="penguin-animation">
-            <canvas id="penguinCanvas"></canvas>
+            <div class="penguin-stage">
+                <canvas id="penguinCanvas"></canvas>
+            </div>
+
+            <div class="dashboard-events">
+                <div class="events-header">
+                    <h3>📅 Upcoming Events</h3>
+                    <a class="events-link" href="/calendar">Manage</a>
+                </div>
+
+                <div id="dashboard-events-list" class="events-list"></div>
+            </div>
         </div>
+
 
 
     </div>
@@ -55,10 +67,7 @@
             <p id="current-subject">Algebra</p>
         </div>
 
-        <div class="info-card">
-            <h3>📅 Events</h3>
-            <p>No current events</p>
-        </div>
+
 
     </div>
 
