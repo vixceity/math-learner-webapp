@@ -39,7 +39,12 @@
                     <a href="#">Forgot password?</a>
                 </div>
                 <button type="submit" class="btn">Login</button>
+                <p class="mobile-switch">
+                    Don't have an account?
+                    <button type="button" class="link-btn register-btn">Register</button>
+                </p>
             </form>
+
         </div>
 
         <div class="form-box register">
@@ -62,6 +67,12 @@
             <button type="submit" class="btn">register</button>
 
                 <p th:if="${registerError}" th:text="${registerError}"></p>
+
+                <p class="mobile-switch">
+                    Already have an account?
+                    <button type="button" class="link-btn login-btn">Login</button>
+                </p>
+
 
             </form>
         </div>
