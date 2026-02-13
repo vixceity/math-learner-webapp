@@ -419,6 +419,10 @@ a {
         display: none;
     }
 
+    #open-sidebar-button {
+        display: block;
+    }
+
     nav {
         position: fixed;
         top: 0;
