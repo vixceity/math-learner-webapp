@@ -54,7 +54,22 @@
     font-weight: bold;
     padding: 0 1rem;
     }
-    nav a{
+.logout-form {
+    margin: 0;
+    display: inline;
+}
+
+.nav-link-button {
+    background: none;
+    border: none;
+    color: #FFFFFF;
+    font: inherit;
+    cursor: pointer;
+    padding: 0 .75rem;  /* match your nav a padding */
+}
+
+
+nav a{
     text-decoration: none;
     color: #FFFFFF;
     padding: 0 .75rem;

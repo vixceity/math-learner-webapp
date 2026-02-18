@@ -1,7 +1,7 @@
 
-// Load animation frames
+
 const frames = [];
-const frameCount = 20; // change to however many frames is in penguinAnimation foldedf
+const frameCount = 20;
 
 for (let i = 1; i <= frameCount; i++) {
     const img = new Image();
@@ -88,12 +88,12 @@ function renderDashboardEvents() {
     `).join("");
 }
 
-/* Optional: updates if events change in another tab */
+
 window.addEventListener("storage", (e) => {
     if (e.key === "events") renderDashboardEvents();
 });
 
-/* Make sure it runs when the page loads */
+
 document.addEventListener("DOMContentLoaded", () => {
     renderDashboardEvents();
 });
@@ -111,4 +111,10 @@ let username = "user";
 
 // Update welcome message
 document.getElementById("welcome-text").textContent = `Welcome back, ${username}!`;
+
+window.addEventListener("pageshow", (event) => {
+
+    if (event.persisted) window.location.reload();
+});
+
 

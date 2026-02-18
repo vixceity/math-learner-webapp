@@ -109,6 +109,24 @@ align-items: center;
 text-align: center;
 }
 
+.logout-form {
+    margin: 0;
+    display: inline;
+}
+
+.nav-link-button {
+    background: none;
+    border: none;
+    color: #FFFCFA;
+    font: inherit;          /* matches your nav font */
+    cursor: pointer;
+    padding: 0;             /* match <a> spacing */
+}
+
+.nav-link-button:hover {
+    text-decoration: underline;
+}
+
 nav a {
     text-decoration: none;
     color: #FFFCFA;

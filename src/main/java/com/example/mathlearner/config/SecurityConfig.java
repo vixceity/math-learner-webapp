@@ -25,7 +25,6 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
                 .authorizeHttpRequests(auth -> auth
-                        // public pages
                         .requestMatchers(
                                 "/",
                                 "/about",
@@ -36,13 +35,8 @@ public class SecurityConfig {
                                 "/js/**",
                                 "/images/**"
                         ).permitAll()
-
-                        // protect notes
-                        .requestMatchers("/notes").authenticated()
-
-                        .anyRequest().permitAll()
+                        .anyRequest().authenticated()
                 )
-
                 .formLogin(form -> form
                         .loginPage("/signup")
                         .loginProcessingUrl("/login")
@@ -50,24 +44,16 @@ public class SecurityConfig {
                         .defaultSuccessUrl("/home", true)
                         .permitAll()
                 )
-
                 .logout(logout -> logout
                         .logoutUrl("/logout")
-                        .logoutSuccessUrl("/signup?logout")
+                        .logoutSuccessUrl("/?logout")
                         .invalidateHttpSession(true)
                         .clearAuthentication(true)
                         .deleteCookies("JSESSIONID")
-                        .permitAll()
-
-
                 )
-                .headers(headers -> headers
-                        .cacheControl(Customizer.withDefaults())
-                );
-
-
-
+                .headers(headers -> headers.cacheControl(Customizer.withDefaults()));
 
         return http.build();
     }
+
 }
