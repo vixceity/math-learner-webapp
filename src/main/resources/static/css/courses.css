@@ -65,9 +65,26 @@
     color: #FFFFFF;
     font: inherit;
     cursor: pointer;
-    padding: 0 .75rem;  /* match your nav a padding */
+    padding: 0 .75rem;
 }
 
+.logout-form {
+    margin: 0;
+    display: inline-flex;
+}
+
+.nav-link-button {
+    background: none;
+    border: none;
+    color: #FFFFFF;
+    font: inherit;
+    cursor: pointer;
+    padding: 0 .75rem;
+}
+
+.nav-link-button:hover {
+    text-decoration: underline;
+}
 
 nav a{
     text-decoration: none;
@@ -284,13 +301,16 @@ main {
     nav {
         padding: 0;
     }
+
     .hero {
         padding-left: 0;
         padding-right: 0;
     }
+
     .hero-content {
         max-width: 100%;
     }
+
     .hero h1 {
         font-size: 28px;
     }
@@ -310,5 +330,26 @@ main {
 
     .course-card {
         border-radius: 0;
+
+
+    }
+
+    .logout-form {
+        margin: 0;
+        display: inline-flex;
+        align-items: center;
+    }
+
+    .nav-link-button {
+        background: none;
+        border: none;
+        color: #FFFFFF;
+        font: inherit;
+        cursor: pointer;
+        padding: 0 .75rem; /* match nav a padding */
+    }
+
+    .nav-link-button:hover {
+        text-decoration: underline;
     }
 }

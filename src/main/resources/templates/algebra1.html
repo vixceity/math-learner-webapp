@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -14,13 +14,32 @@
 
 <body>
 <nav class="nav">
-    <a href="/"><div class="logo">Numbl</div></a>
-    <div class="nav-item">
+    <a th:href="${#request.userPrincipal != null} ? '/home' : '/'">
+        <div class="logo">Numbl</div>
+    </a>
+
+
+    <div class="nav-item" th:if="${#request.userPrincipal == null}">
         <a href="/about">About</a>
         <a href="/courses">Courses</a>
-        <a href="/signup">Login</a>
+        <a href="/signup">Log In</a>
+    </div>
+
+
+    <div class="nav-item" th:if="${#request.userPrincipal != null}">
+        <a href="/course">Courses</a>
+        <a href="/calendar">Join Live</a>
+
+        <form th:action="@{/logout}" method="post" class="logout-form">
+            <input type="hidden"
+                   th:if="${_csrf != null}"
+                   th:name="${_csrf.parameterName}"
+                   th:value="${_csrf.token}">
+            <button type="submit" class="nav-link-button">Log Out</button>
+        </form>
     </div>
 </nav>
+
 
 <header class="hero">
     <div class="hero-content">

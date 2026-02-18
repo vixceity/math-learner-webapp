@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -14,18 +14,41 @@
 </head>
 
 <body>
-<nav>
-    <a href="/home"><div class="logo">Numbl</div></a>
-    <div class="nav-item">
+<nav class="nav">
+    <a href="/home" th:if="${#request.userPrincipal != null}">
+        <div class="logo">Numbl</div>
+    </a>
+
+    <a href="/" th:if="${#request.userPrincipal == null}">
+        <div class="logo">Numbl</div>
+    </a>
+
+    <div class="logo">Numbl</div>
+    </a>
+
+    <!-- Logged OUT -->
+    <div class="nav-item" th:if="${#request.userPrincipal == null}">
+        <a href="/about">About</a>
+        <a href="/courses">Courses</a>
+        <a href="/signup">Log In</a>
+    </div>
+
+    <!-- Logged IN -->
+    <div class="nav-item" th:if="${#request.userPrincipal != null}">
         <a href="/course">Courses</a>
         <a href="/calendar">Join Live</a>
+
         <form th:action="@{/logout}" method="post" class="logout-form">
-            <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">
+            <input type="hidden"
+                   th:if="${_csrf != null}"
+                   th:name="${_csrf.parameterName}"
+                   th:value="${_csrf.token}">
+
             <button type="submit" class="nav-link-button">Log Out</button>
         </form>
-
     </div>
 </nav>
+
 
 <main>
     <header class="hero">
@@ -41,7 +64,7 @@
         <div class="course-grid">
 
             <!-- to add a new card, just -->
-            <a class="course-link" href="algebra1">
+            <a class="course-link" th:href="@{/algebra1}">
                 <div class="course-card">
                     <img src="https://via.placeholder.com/1600x450" alt="Course image">
                     <div class="card-content">
@@ -53,7 +76,7 @@
             </a>
 
 
-            <a class="course-link" href="geometry">
+            <a class="course-link" th:href="@{/geometry}">
                 <div class="course-card">
                     <img src="https://via.placeholder.com/1600x450" alt="Course image">
                     <div class="card-content">
@@ -64,7 +87,7 @@
                 </div>
             </a>
 
-            <a class="course-link" href="algebra2">
+            <a class="course-link" th:href="@{/algebra2}">
                 <div class="course-card">
                     <img src="https://via.placeholder.com/1600x450" alt="Course image">
                     <div class="card-content">
