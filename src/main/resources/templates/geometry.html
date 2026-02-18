@@ -1,32 +1,39 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Algebra 1</title>
+    <title>Geometry</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/courses.css" />
-
 </head>
 
 <body>
 <nav class="nav">
-    <a th:href="${#request.userPrincipal != null} ? '/home' : '/'">
+
+
+    <a href="/home" sec:authorize="isAuthenticated()">
+        <div class="logo">Numbl</div>
+    </a>
+
+    <a href="/" sec:authorize="!isAuthenticated()">
         <div class="logo">Numbl</div>
     </a>
 
 
-    <div class="nav-item" th:if="${#request.userPrincipal == null}">
+    <div class="nav-item" sec:authorize="!isAuthenticated()">
         <a href="/about">About</a>
         <a href="/courses">Courses</a>
         <a href="/signup">Log In</a>
     </div>
 
 
-    <div class="nav-item" th:if="${#request.userPrincipal != null}">
+    <div class="nav-item" sec:authorize="isAuthenticated()">
         <a href="/course">Courses</a>
         <a href="/calendar">Join Live</a>
 
@@ -35,12 +42,10 @@
                    th:if="${_csrf != null}"
                    th:name="${_csrf.parameterName}"
                    th:value="${_csrf.token}">
-
             <button type="submit" class="nav-link-button">Log Out</button>
         </form>
     </div>
 </nav>
-
 
 <header class="hero">
     <div class="hero-content">
@@ -53,12 +58,9 @@
 
     <h2 class="section-title">Course Units</h2>
 
-    <!-- each unit -->
     <div class="unit">
         <button class="unit-toggle">1. Tools for Geometry</button>
-
         <div class="unit-content">
-
             <div class="subtopics">
                 <p>1.1 Points, Lines, and Planes</p>
                 <p>1.2 Measuring Segments</p>
@@ -66,37 +68,29 @@
                 <p>1.4 Addition Postulate</p>
                 <p>1.5 Angle Pairs</p>
             </div>
-
             <div class="unit-buttons">
-                <a class="exercise-btn" href="../notes?subject=geometry&unit=1">Review</a>
+                <a class="exercise-btn" href="/notes?subject=geometry&unit=1">Review</a>
             </div>
-
         </div>
     </div>
 
     <div class="unit">
         <button class="unit-toggle">2. Reasoning and Proofs</button>
-
         <div class="unit-content">
-
             <div class="subtopics">
                 <p>2.1 Reasoning and Proof</p>
                 <p>2.2 Intro to Proofs</p>
                 <p>2.3 More with Proofs</p>
             </div>
-
             <div class="unit-buttons">
-                <a class="exercise-btn" href="../notes?subject=geometry&unit=2">Review</a>
+                <a class="exercise-btn" href="/notes?subject=geometry&unit=2">Review</a>
             </div>
-
         </div>
     </div>
 
     <div class="unit">
         <button class="unit-toggle">3. Parallel and Perpendicular Lines</button>
-
         <div class="unit-content">
-
             <div class="subtopics">
                 <p>3.1 Lines and Angles</p>
                 <p>3.2 Properties of Parallel Lines</p>
@@ -105,38 +99,30 @@
                 <p>3.5 Equations of Lines in the Coordinate Plane</p>
                 <p>3.6 Slopes of Parallel and Perpendicular Lines</p>
             </div>
-
             <div class="unit-buttons">
-                <a class="exercise-btn" href="../notes?subject=geometry&unit=3">Review</a>
+                <a class="exercise-btn" href="/notes?subject=geometry&unit=3">Review</a>
             </div>
-
         </div>
     </div>
 
     <div class="unit">
         <button class="unit-toggle">4. Triangle Congruence</button>
-
         <div class="unit-content">
-
             <div class="subtopics">
                 <p>4.1 Triangles</p>
                 <p>4.2 SSS and SAS</p>
                 <p>4.3 ASA and AAS</p>
                 <p>4.4 CPCTC and HL</p>
             </div>
-
             <div class="unit-buttons">
-                <a class="exercise-btn" href="../notes?subject=geometry&unit=4">Review</a>
+                <a class="exercise-btn" href="/notes?subject=geometry&unit=4">Review</a>
             </div>
-
         </div>
     </div>
 
     <div class="unit">
         <button class="unit-toggle">5. Polygons and Quadrilaterals</button>
-
         <div class="unit-content">
-
             <div class="subtopics">
                 <p>5.1 Polygon Angles</p>
                 <p>5.2 Parallelogram Properties</p>
@@ -145,37 +131,29 @@
                 <p>5.5 Conditions for Proving Rhombus and Rectangles</p>
                 <p>5.6 Kites and Trapezoids</p>
             </div>
-
             <div class="unit-buttons">
-                <a class="exercise-btn" href="../notes?subject=geometry&unit=5">Review</a>
+                <a class="exercise-btn" href="/notes?subject=geometry&unit=5">Review</a>
             </div>
-
         </div>
     </div>
 
     <div class="unit">
         <button class="unit-toggle">6. Similar Figures</button>
-
         <div class="unit-content">
-
             <div class="subtopics">
                 <p>6.1 Similar Figures</p>
                 <p>6.2 Prove Triangles Similar</p>
                 <p>6.3 Side Splitter Theorem</p>
             </div>
-
             <div class="unit-buttons">
-                <a class="exercise-btn" href="../notes?subject=geometry&unit=6">Review</a>
+                <a class="exercise-btn" href="/notes?subject=geometry&unit=6">Review</a>
             </div>
-
         </div>
     </div>
 
     <div class="unit">
         <button class="unit-toggle">7. Right Triangles</button>
-
         <div class="unit-content">
-
             <div class="subtopics">
                 <p>7.1 Pythagorean Theorem and Its Converse</p>
                 <p>7.2 Special Right Triangles Part I</p>
@@ -183,38 +161,29 @@
                 <p>7.4 Trig Ratios</p>
                 <p>7.5 Inverse Trig Functions</p>
             </div>
-
             <div class="unit-buttons">
-                <a class="exercise-btn" href="../notes?subject=geometry&unit=7">Review</a>
+                <a class="exercise-btn" href="/notes?subject=geometry&unit=7">Review</a>
             </div>
-
         </div>
     </div>
 
     <div class="unit">
         <button class="unit-toggle">8. Transformations</button>
-
         <div class="unit-content">
-
             <div class="subtopics">
                 <p>8.1 Transformations and Translations</p>
                 <p>8.2 Reflections</p>
                 <p>8.3 Rotations</p>
             </div>
-
             <div class="unit-buttons">
-                <a class="exercise-btn" href="../notes?subject=geometry&unit=8">Review</a>
+                <a class="exercise-btn" href="/notes?subject=geometry&unit=8">Review</a>
             </div>
-
         </div>
     </div>
 
-
     <div class="unit">
         <button class="unit-toggle">9. Area of Polygons</button>
-
         <div class="unit-content">
-
             <div class="subtopics">
                 <p>9.1 Parallelograms and Triangles</p>
                 <p>9.2 Trapezoids, Kites, and Rhombi</p>
@@ -222,19 +191,15 @@
                 <p>9.4 Circles and Arcs</p>
                 <p>9.5 Sectors and Segments</p>
             </div>
-
             <div class="unit-buttons">
-                <a class="exercise-btn" href="../notes?subject=geometry&unit=9">Review</a>
+                <a class="exercise-btn" href="/notes?subject=geometry&unit=9">Review</a>
             </div>
-
         </div>
     </div>
 
     <div class="unit">
         <button class="unit-toggle">10. Surface Area and Volume</button>
-
         <div class="unit-content">
-
             <div class="subtopics">
                 <p>10.1 SA of Prisms and Cylinders</p>
                 <p>10.2 SA of Pyramids and Cones</p>
@@ -242,62 +207,44 @@
                 <p>10.4 Volume of Pyramids and Cones</p>
                 <p>10.5 SA and Volume of Spheres</p>
             </div>
-
             <div class="unit-buttons">
-                <a class="exercise-btn" href="../notes?subject=geometry&unit=10">Review</a>
+                <a class="exercise-btn" href="/notes?subject=geometry&unit=10">Review</a>
             </div>
-
         </div>
     </div>
 
     <div class="unit">
         <button class="unit-toggle">11. Circles</button>
-
         <div class="unit-content">
-
             <div class="subtopics">
                 <p>11.1 Tangents to Circles</p>
                 <p>11.2 Chords and Arcs</p>
                 <p>11.3 Intercepted Arcs</p>
                 <p>11.4 Secants and Tangents</p>
             </div>
-
             <div class="unit-buttons">
-                <a class="exercise-btn" href="../notes?subject=geometry&unit=11">Review</a>
+                <a class="exercise-btn" href="/notes?subject=geometry&unit=11">Review</a>
             </div>
-
         </div>
     </div>
 
     <div class="unit">
         <button class="unit-toggle">12. Probability</button>
-
         <div class="unit-content">
-
             <div class="subtopics">
                 <p>12.1 Introduction to Probability</p>
                 <p>12.2 More Probability</p>
             </div>
-
             <div class="unit-buttons">
-                <a class="exercise-btn" href="../notes?subject=geometry&unit=12">Review</a>
+                <a class="exercise-btn" href="/notes?subject=geometry&unit=12">Review</a>
             </div>
-
         </div>
     </div>
 
 </section>
 
-
-
-
-
-
-</section>
-
 <script>
     const toggles = document.querySelectorAll(".unit-toggle");
-
     toggles.forEach(btn => {
         btn.addEventListener("click", () => {
             const content = btn.nextElementSibling;

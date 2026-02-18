@@ -1,40 +1,41 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Course</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Unna:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="/css/courses.css" />
 </head>
 
 <body>
 <nav class="nav">
-    <a href="/home" th:if="${#request.userPrincipal != null}">
+
+
+    <a href="/home" sec:authorize="isAuthenticated()">
         <div class="logo">Numbl</div>
     </a>
 
-    <a href="/" th:if="${#request.userPrincipal == null}">
+    <a href="/" sec:authorize="!isAuthenticated()">
         <div class="logo">Numbl</div>
     </a>
 
-    <div class="logo">Numbl</div>
-    </a>
 
-    <!-- Logged OUT -->
-    <div class="nav-item" th:if="${#request.userPrincipal == null}">
+    <div class="nav-item" sec:authorize="!isAuthenticated()">
         <a href="/about">About</a>
         <a href="/courses">Courses</a>
         <a href="/signup">Log In</a>
     </div>
 
-    <!-- Logged IN -->
-    <div class="nav-item" th:if="${#request.userPrincipal != null}">
+
+    <div class="nav-item" sec:authorize="isAuthenticated()">
         <a href="/course">Courses</a>
         <a href="/calendar">Join Live</a>
 
@@ -43,12 +44,10 @@
                    th:if="${_csrf != null}"
                    th:name="${_csrf.parameterName}"
                    th:value="${_csrf.token}">
-
             <button type="submit" class="nav-link-button">Log Out</button>
         </form>
     </div>
 </nav>
-
 
 <main>
     <header class="hero">
@@ -62,11 +61,8 @@
         <h2 class="section-title">All Courses</h2>
 
         <div class="course-grid">
-
-            <!-- to add a new card, just -->
             <a class="course-link" th:href="@{/algebra1}">
                 <div class="course-card">
-                    <img src="https://via.placeholder.com/1600x450" alt="Course image">
                     <div class="card-content">
                         <span class="course-tag">Intermediate</span>
                         <h3>Algebra 1</h3>
@@ -75,10 +71,8 @@
                 </div>
             </a>
 
-
             <a class="course-link" th:href="@{/geometry}">
                 <div class="course-card">
-                    <img src="https://via.placeholder.com/1600x450" alt="Course image">
                     <div class="card-content">
                         <span class="course-tag">Intermediate</span>
                         <h3>Geometry</h3>
@@ -89,7 +83,6 @@
 
             <a class="course-link" th:href="@{/algebra2}">
                 <div class="course-card">
-                    <img src="https://via.placeholder.com/1600x450" alt="Course image">
                     <div class="card-content">
                         <span class="course-tag">Intermediate</span>
                         <h3>Algebra 2</h3>
@@ -102,4 +95,3 @@
 </main>
 </body>
 </html>
-

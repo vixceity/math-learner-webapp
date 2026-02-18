@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -13,18 +15,25 @@
 
 <body>
 <nav class="nav">
-    <a th:href="${#request.userPrincipal != null} ? '/home' : '/'">
+
+
+    <a href="/home" sec:authorize="isAuthenticated()">
+        <div class="logo">Numbl</div>
+    </a>
+
+    <a href="/" sec:authorize="!isAuthenticated()">
         <div class="logo">Numbl</div>
     </a>
 
 
-    <div class="nav-item" th:if="${#request.userPrincipal == null}">
+    <div class="nav-item" sec:authorize="!isAuthenticated()">
         <a href="/about">About</a>
         <a href="/courses">Courses</a>
         <a href="/signup">Log In</a>
     </div>
 
-    <div class="nav-item" th:if="${#request.userPrincipal != null}">
+
+    <div class="nav-item" sec:authorize="isAuthenticated()">
         <a href="/course">Courses</a>
         <a href="/calendar">Join Live</a>
 
@@ -38,11 +47,10 @@
     </div>
 </nav>
 
-
 <header class="hero">
     <div class="hero-content">
         <h1>Algebra 2</h1>
-        <p>Advance your understanding of functions, polynomials, exponential, and matrices.</p>
+        <p>Advance your understanding of functions, polynomials, exponentials, and matrices.</p>
     </div>
 </header>
 
@@ -238,7 +246,6 @@
 
 <script>
     const toggles = document.querySelectorAll(".unit-toggle");
-
     toggles.forEach(btn => {
         btn.addEventListener("click", () => {
             const content = btn.nextElementSibling;
