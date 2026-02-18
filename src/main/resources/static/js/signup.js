@@ -17,10 +17,22 @@ document.addEventListener("DOMContentLoaded", () => {
     const hasRegisterError = document.querySelector("[data-register-error]") !== null;
     if (hasRegisterError) container.classList.add("active");
 
+
     if (params.has("registered")) {
         container.classList.add("active");
-        setTimeout(() => container.classList.remove("active"), 150);
+        const url = new URL(window.location.href);
+        url.searchParams.delete("registered");
+        window.history.replaceState({}, "", url);
+
+        requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+                setTimeout(() => container.classList.remove("active"), 120);
+            });
+        });
     }
+
+
+
 
     if (params.has("error")) {
         container.classList.remove("active");
