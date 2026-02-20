@@ -296,6 +296,53 @@ main {
     background: #394155;
 }
 
+.ka-footer{ margin-top: 7rem; }
+.ka-footer {
+    background-color: #33466E;
+    color: #FFFCFA;
+    padding: 40px 0;
+    font-family: "Nunito Sans", sans-serif;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    padding: 0 20px;
+}
+
+.footer-column {
+    flex: 1 1 200px;
+    min-width: 180px;
+}
+
+.footer-column h4 {
+    font-size: 16px;
+    margin-bottom: 12px;
+    font-weight: bold;
+    color: #FFFCFA;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    align-items: center;
+}
+
+.footer-note {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #FFFCFA;
+}
+
+a {
+    text-decoration: none;
+    color: #FFFCFA;
+}
 
 @media (max-width: 768px) {
     nav {

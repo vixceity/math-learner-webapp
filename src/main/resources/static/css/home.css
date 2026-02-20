@@ -1,44 +1,26 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Unna:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
-.nunito-sans-<uniquifier> {
-  font-family: "Nunito Sans", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: <weight>;
-  font-style: normal;
-  font-variation-settings:
-    "wdth" 100,
-    "YTLC" 500;
-}
-.unna-regular {
-  font-family: "Unna", serif;
-  font-weight: 400;
-  font-style: normal;
-}
 
-.unna-bold {
-  font-family: "Unna", serif;
-  font-weight: 700;
-  font-style: normal;
-}
 
-.unna-regular-italic {
-  font-family: "Unna", serif;
-  font-weight: 400;
-  font-style: italic;
-}
-
-.unna-bold-italic {
-  font-family: "Unna", serif;
-  font-weight: 700;
-  font-style: italic;
-}
-/* ✅ prevents width+padding from overflowing the viewport */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
     box-sizing: border-box;
 }
 
+body {
+    margin: 0;
+    background-color: #0D111C;
+    color: #ffffff;
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: 500;
+}
+
+p { margin: 0; }
+
+
 nav {
-    /* keep your colors/border */
     background: #33466E;
     border-bottom: 4px solid #23314C;
 
@@ -46,25 +28,29 @@ nav {
     top: 0;
     z-index: 10;
 
-    /* ✅ flexible sizing */
-    width: 100%;          /* was 95% */
-    min-height: 75px;    /* instead of fixed height */
+    width: 100%;
+    min-height: 75px;
     padding: 0 clamp(1rem, 2vw, 2rem);
 
     display: flex;
     align-items: center;
     justify-content: space-between;
 
-    /* ✅ if the screen is tight, wrap instead of hiding links */
     flex-wrap: wrap;
     gap: 0.75rem;
+
+    font-family: "Unna", serif;
 }
 
-/* optional: logo scales down a bit on small screens */
+nav a {
+    text-decoration: none;
+    color: #FFFCFA;
+}
+
 .logo {
     color: #FFFCFA;
     font-size: clamp(1.4rem, 1.1rem + 1vw, 2rem);
-    font-weight: bold;
+    font-weight: 700;
     white-space: nowrap;
 }
 
@@ -73,40 +59,9 @@ nav {
     display: flex;
     gap: 1.5rem;
 
-    /* ✅ allows links to wrap instead of going off-screen */
     flex-wrap: wrap;
     justify-content: flex-end;
-
-    /* ✅ pushes this group to the far right */
     margin-left: auto;
-}
-
-/* On very small screens, stack it neatly */
-@media (max-width: 520px) {
-    .nav-item {
-        width: 100%;
-        justify-content: space-between;
-        gap: 0.75rem;
-    }
-}
-
-
-
-body {
-    margin: 0;
-    background-color: #0D111C;
-    color: white;
-    font-family: "Nunito Sans", sans-serif;
-    font-weight: 500;
-}
-.h3 {
-    font-family: "Unna", serif;
-     font-weight: 700;
-      }
-p{
-display: flex;
-align-items: center;
-text-align: center;
 }
 
 .logout-form {
@@ -118,71 +73,106 @@ text-align: center;
     background: none;
     border: none;
     color: #FFFCFA;
-    font: inherit;          /* matches your nav font */
+    font: inherit;
     cursor: pointer;
-    padding: 0;             /* match <a> spacing */
+    padding: 0;
 }
 
 .nav-link-button:hover {
     text-decoration: underline;
 }
 
-nav a {
-    text-decoration: none;
-    color: #FFFCFA;
+@media (max-width: 520px) {
+    .nav-item {
+        width: 100%;
+        justify-content: space-between;
+        gap: 0.75rem;
+    }
 }
 
 
-@media (max-width: 900px) {
-    .page { flex-direction: column; }
-    .penguin-box, .right-side { width: 100%; }
-}
-.page{
+.page {
     display: flex;
-    gap: 40px;
-    padding: 20px;
+    flex-wrap: wrap;
+    gap: clamp(14px, 3vw, 40px);
+    padding: clamp(12px, 3vw, 20px);
 
     max-width: 1200px;
     margin: 0 auto;
 }
 
-
-
 .penguin-box {
     background: #141C2B;
     padding: 20px;
-    width: 65%;
     border-radius: 12px;
+
     display: flex;
     flex-direction: column;
     align-items: center;
+
     position: relative;
+
+    width: auto;
+    flex: 1 1 620px;
+    min-width: 0;
 }
+
 
 .speech-bubble {
     background: #1C273B;
-    padding: 10px 20px;
-    border-radius: 8px;
+    border: 1px solid #23314C;
+
+    padding: 10px 16px;
+    border-radius: 10px;
+
     position: absolute;
     top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    max-width: min(420px, calc(100% - 24px));
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    font-family: "Nunito Sans", sans-serif;
+    line-height: 1.15;
     text-align: center;
-    font-family: "Pixelify Sans";
 }
+
+#welcome-text {
+    margin: 0;
+    max-width: 100%;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    text-align: center;
+}
+
 
 .bubble-arrow {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -10px;
+
     width: 0;
     height: 0;
-    border-left: 12px solid transparent;
-    border-right: 12px solid transparent;
-    border-top: 12px solid #33466E;
-    margin: 0 auto;
+
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid #1C273B;
 }
 
-/* make the big bordered box hold BOTH the penguin + events */
 .penguin-animation {
-    margin-top: 70px;
+    margin-top: 84px;
     width: 100%;
-    height: 420px;
+
+    height: clamp(360px, 62vh, 520px);
+
     background: #0b0f19;
     border: 3px solid #23314C;
     border-radius: 6px;
@@ -193,24 +183,23 @@ nav a {
     padding: 14px;
 }
 
-/* top area for the penguin canvas */
 .penguin-stage {
     flex: 1;
     border-radius: 6px;
     overflow: hidden;
+
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-/* canvas fills the stage */
 #penguinCanvas {
     width: 100%;
     height: 100%;
     image-rendering: pixelated;
 }
 
-/* events area inside the big box */
+/* EVENTS */
 .dashboard-events {
     background: rgba(20, 28, 43, 0.85);
     border: 1px solid #23314C;
@@ -241,6 +230,7 @@ nav a {
     text-decoration: none;
     font-size: 0.9rem;
 }
+
 .events-link:hover { text-decoration: underline; }
 
 .events-list {
@@ -264,10 +254,14 @@ nav a {
     display: flex;
     flex-direction: column;
     gap: 4px;
+    min-width: 0;
 }
 
 .event-title {
     font-weight: 700;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .event-date {
@@ -282,22 +276,12 @@ nav a {
     align-self: center;
 }
 
-.no-events {
-    opacity: 0.85;
-    font-size: 0.95rem;
-}
-
-
-
-
-.penguin-animation img {
-    width: 260px;
-    image-rendering: pixelated;
-}
-
 
 .right-side {
-    width: 30%;
+    width: auto;
+    flex: 0 1 320px;
+    min-width: min(320px, 100%);
+
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -309,18 +293,72 @@ nav a {
     border-radius: 12px;
 }
 
+.ka-footer{ margin-top: 4rem; }
+.ka-footer {
+    background-color: #33466E;
+    color: #FFFCFA;
+    padding: 40px 0;
+    font-family: "Nunito Sans", sans-serif;
+}
 
-#penguinCanvas {
-    width: 100%;
-    height: 100%;
-    image-rendering: pixelated;
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    padding: 0 20px;
+}
+
+.footer-column {
+    flex: 1 1 200px;
+    min-width: 180px;
+}
+
+.footer-column h4 {
+    font-size: 16px;
+    margin-bottom: 12px;
+    font-weight: bold;
+    color: #FFFCFA;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    align-items: center;
+}
+
+.footer-note {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #FFFCFA;
+}
+
+a {
+    text-decoration: none;
+    color: #FFFCFA;
+}
+
+@media (max-width: 700px) {
+    .right-side {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+    }
+    .info-card { padding: 14px; }
 }
 
 @media (max-width: 520px) {
-    .penguin-animation {
-        height: 520px; /* more room so events don’t feel cramped */
+    .dashboard-events { max-height: 210px; }
+    .event-row { flex-wrap: wrap; }
+    .event-time {
+        width: 100%;
+        text-align: right;
     }
-    .dashboard-events {
-        max-height: 210px;
-    }
+}
+
+@media (max-width: 380px) {
+    .right-side { grid-template-columns: 1fr; }
 }

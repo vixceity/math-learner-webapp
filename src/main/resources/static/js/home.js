@@ -107,14 +107,31 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-let username = "user";
+//let username = "user";
 
-// Update welcome message
-document.getElementById("welcome-text").textContent = `Welcome back, ${username}!`;
+
+//document.getElementById("welcome-text").textContent = `Welcome back, ${username}!`;
 
 window.addEventListener("pageshow", (event) => {
 
     if (event.persisted) window.location.reload();
 });
 
+
+let stageW = 0;
+let stageH = 0;
+
+function resizeCanvasToStage() {
+    const rect = canvas.parentElement.getBoundingClientRect();
+    stageW = rect.width;
+    stageH = rect.height;
+
+    const dpr = window.devicePixelRatio || 1;
+    canvas.width = Math.round(stageW * dpr);
+    canvas.height = Math.round(stageH * dpr);
+
+    // draw using CSS pixels
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    ctx.imageSmoothingEnabled = false;
+}
 
