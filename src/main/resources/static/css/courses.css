@@ -1,37 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Unna:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
-.nunito-sans-<uniquifier> {
-  font-family: "Nunito Sans", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: <weight>;
-  font-style: normal;
-  font-variation-settings:
-    "wdth" 100,
-    "YTLC" 500;
-}
-.unna-regular {
-  font-family: "Unna", serif;
-  font-weight: 400;
-  font-style: normal;
-}
 
-.unna-bold {
-  font-family: "Unna", serif;
-  font-weight: 700;
-  font-style: normal;
-}
 
-.unna-regular-italic {
-  font-family: "Unna", serif;
-  font-weight: 400;
-  font-style: italic;
-}
-
-.unna-bold-italic {
-  font-family: "Unna", serif;
-  font-weight: 700;
-  font-style: italic;
-}
 * {
     box-sizing: border-box;
     margin: 0;
@@ -39,7 +9,9 @@
     font-family: "Unna", serif;
     font-weight: 700;
 }
- nav {
+
+
+nav {
     height: 75px;
     background: #2A3D5E;
     display: flex;
@@ -47,30 +19,35 @@
     align-items: center;
     padding: 0rem calc((100vw - 1300px)/2);
     border-bottom: 4px solid #23314C;
-    }
-    .logo {
+}
+
+.logo {
     color: #FFFFFF;
     font-size: 2rem;
     font-weight: bold;
     padding: 0 1rem;
-    }
-.logout-form {
-    margin: 0;
-    display: inline;
 }
 
-.nav-link-button {
-    background: none;
-    border: none;
+nav a {
+    text-decoration: none;
     color: #FFFFFF;
-    font: inherit;
-    cursor: pointer;
     padding: 0 .75rem;
+    font-family: "Unna", serif;
+    font-weight: 700;
+}
+
+.nav-item {
+    font-size: 1.5rem;
+    padding: 0 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .logout-form {
     margin: 0;
     display: inline-flex;
+    align-items: center;
 }
 
 .nav-link-button {
@@ -86,34 +63,24 @@
     text-decoration: underline;
 }
 
-nav a{
-    text-decoration: none;
-    color: #FFFFFF;
-    padding: 0 .75rem;
-        font-family: "Unna", serif;
-        font-weight: 700;
-    }
-    .nav-item {
-    font-size: 1.5rem;
-    padding: 0 1rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    }
+
 body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
     margin: 0;
     background: linear-gradient(90deg, #141C2B, #1C273B, #23314C);
-    font-family: "Nunito Sans";
+    font-family: "Nunito Sans", sans-serif;
     font-weight: 500;
     color: #fff;
-    overflow-x: hidden; /* Prevent horizontal scroll */
+    overflow-x: hidden;
 }
+
 main {
     flex-grow: 1;
 }
+
+
 .hero {
     background: url("../images/design-01khagedma-1770953219.jpg") center/cover no-repeat;
     padding: 80px 20px;
@@ -136,7 +103,7 @@ main {
     opacity: 0.9;
 }
 
-/* SECTIONS */
+
 .course-section {
     margin-top: 40px;
 }
@@ -168,7 +135,6 @@ main {
 .course-card:hover {
     transform: translateY(-4px);
     color: #B5C3D4;
-
 }
 
 .course-card img {
@@ -194,11 +160,13 @@ main {
     display: inline-block;
     margin-bottom: 6px;
 }
+
 .course-link {
     text-decoration: none;
     color: inherit;
     display: block;
 }
+
 
 .unit {
     margin: 20px 0;
@@ -231,7 +199,6 @@ main {
     background: #26344c;
 }
 
-/* dropdowm */
 .unit-content {
     max-height: 0;
     opacity: 0;
@@ -241,32 +208,16 @@ main {
     gap: 10px;
     padding: 0 16px;
     background: #131822;
-    transition:
-            max-height 0.45s ease,
-            opacity 0.35s ease;
+    transition: max-height 0.45s ease, opacity 0.35s ease;
 }
+
 
 .unit-content.open {
     padding: 16px;
-    max-height: 300px;
+    max-height: 2000px;
     opacity: 1;
 }
 
-/* excercise buttons */
-.exercise-btn {
-    background: #4a6fa5;
-    padding: 10px;
-    border-radius: 6px;
-    text-decoration: none;
-    color: white;
-    text-align: center;
-    display: block;
-    transition: transform 0.15s ease;
-}
-.exercise-btn:hover {
-    transform: translateY(-3px);
-    background: #4a6fa5;
-}
 .subtopics {
     margin-top: 10px;
     margin-bottom: 15px;
@@ -276,13 +227,16 @@ main {
     font-size: 0.95rem;
 }
 
+
 .unit-buttons {
     display: flex;
-    gap: 10px;
+    gap: 16px;
+    align-items: center;
     margin-bottom: 10px;
 }
 
-.exercise-btn {
+
+.unit-buttons .exercise-btn {
     background: #2a3141;
     padding: 8px 14px;
     border-radius: 6px;
@@ -290,13 +244,67 @@ main {
     text-decoration: none;
     font-size: 0.9rem;
     transition: 0.2s;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
 }
 
-.exercise-btn:hover {
+.unit-buttons .exercise-btn {
+    font-family: "Unna", serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    line-height: 1;
+}
+
+
+
+.unit-buttons .exercise-btn:hover {
     background: #394155;
 }
 
-.ka-footer{ margin-top: 7rem; }
+
+.unit-buttons button.exercise-btn {
+    appearance: none;
+    -webkit-appearance: none;
+    font: inherit;
+}
+
+
+.extra-panel {
+    margin-top: 12px;
+}
+
+
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%;
+    overflow: hidden;
+    border-radius: 12px;
+
+
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.extra-placeholder {
+    margin: 0;
+    padding: 12px 0;
+}
+
+/* FOOTER */
+.ka-footer { margin-top: 7rem; }
+
 .ka-footer {
     background-color: #33466E;
     color: #FFFCFA;
@@ -344,6 +352,7 @@ a {
     color: #FFFCFA;
 }
 
+/* MOBILE */
 @media (max-width: 768px) {
     nav {
         padding: 0;
@@ -377,8 +386,6 @@ a {
 
     .course-card {
         border-radius: 0;
-
-
     }
 
     .logout-form {
@@ -393,10 +400,73 @@ a {
         color: #FFFFFF;
         font: inherit;
         cursor: pointer;
-        padding: 0 .75rem; /* match nav a padding */
+        padding: 0 .75rem;
     }
 
     .nav-link-button:hover {
         text-decoration: underline;
+    }
+
+
+    .unit-buttons a.exercise-btn,
+    .unit-buttons button.exercise-btn {
+        font-family: "Unna", serif !important;
+        font-weight: 700 !important;
+        font-size: 0.9rem !important;
+        line-height: 1 !important;
+
+
+        padding: 8px 14px;
+        border: 0;
+        margin: 0;
+        background: #2a3141;
+        color: #fff;
+        text-decoration: none;
+
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+
+        cursor: pointer;
+        appearance: none;
+        -webkit-appearance: none;
+    }
+
+    .unit-buttons a.exercise-btn:hover,
+    .unit-buttons button.exercise-btn:hover {
+        background: #394155;
+    }
+
+
+    .unit-buttons button.exercise-btn {
+        all: unset;
+        box-sizing: border-box;
+        cursor: pointer;
+    }
+
+
+    .unit-buttons a.exercise-btn,
+    .unit-buttons button.exercise-btn {
+        background: #2a3141;
+        padding: 8px 14px;
+        border-radius: 6px;
+
+        color: #fff;
+        text-decoration: none;
+
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+
+
+        font-family: "Unna", serif;
+        font-weight: 700;
+        font-size: 0.9rem;
+        line-height: 1;
+    }
+
+    .unit-buttons a.exercise-btn:hover,
+    .unit-buttons button.exercise-btn:hover {
+        background: #394155;
     }
 }
