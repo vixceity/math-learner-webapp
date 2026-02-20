@@ -34,3 +34,31 @@ body {
     font-size: 18px;
     border: 2px solid #2c394f;
 }
+
+.notes-content h2{
+    margin: 0 0 14px;
+}
+
+.notes-content ul{
+    margin: 0;
+    padding-left: 22px;
+}
+
+.notes-content li{
+    margin: 0 0 18px;
+    padding: 12px 14px;
+    border-radius: 10px;
+    background: #0f1624;
+    border: 1px solid #2c394f;
+
+    white-space: pre-line;
+}
+
+.notes-content li:last-child{
+    margin-bottom: 0;
+}
+
+.notes-content p{
+    margin: 0 0 18px;
+    white-space: pre-line;
+}

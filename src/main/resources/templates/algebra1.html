@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,16 +11,39 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/courses.css" />
-
 </head>
 
 <body>
 <nav class="nav">
-    <a href="/"><div class="logo">Numbl</div></a>
-    <div class="nav-item">
+
+
+    <a href="/home" sec:authorize="isAuthenticated()">
+        <div class="logo">Numbl</div>
+    </a>
+
+    <a href="/" sec:authorize="!isAuthenticated()">
+        <div class="logo">Numbl</div>
+    </a>
+
+
+    <div class="nav-item" sec:authorize="!isAuthenticated()">
         <a href="/about">About</a>
         <a href="/courses">Courses</a>
-        <a href="/signup">Login</a>
+        <a href="/signup">Log In</a>
+    </div>
+
+
+    <div class="nav-item" sec:authorize="isAuthenticated()">
+        <a href="/course">Courses</a>
+        <a href="/calendar">Join Live</a>
+
+        <form th:action="@{/logout}" method="post" class="logout-form">
+            <input type="hidden"
+                   th:if="${_csrf != null}"
+                   th:name="${_csrf.parameterName}"
+                   th:value="${_csrf.token}">
+            <button type="submit" class="nav-link-button">Log Out</button>
+        </form>
     </div>
 </nav>
 
@@ -30,16 +55,14 @@
 </header>
 
 <section class="unit-section">
-
     <h2 class="section-title">Course Units</h2>
 
 
-    <!-- each unit  -->
+
     <div class="unit">
         <button class="unit-toggle">1. Expressions and Equations</button>
 
         <div class="unit-content">
-
             <div class="subtopics">
                 <p>1.1: Order of Operations</p>
                 <p>1.2: Expressions, Equations, Inequalities</p>
@@ -48,147 +71,183 @@
             </div>
 
             <div class="unit-buttons">
-                <a class="exercise-btn" href="/notes?subject=algebra1&unit=1">Review</a>
+                <a class="exercise-btn" href="/notes?subject=algebra1&unit=1">Notes</a>
 
-
+                <button class="exercise-btn extra-btn"
+                        type="button"
+                        aria-expanded="false"
+                        data-video-id="nF27FOfly7w"
+                        data-start="1">
+                    Unit 1 Review
+                </button>
             </div>
 
+
+            <div class="extra-panel" hidden>
+                <div class="video-wrapper"></div>
+            </div>
         </div>
     </div>
 
 
     <div class="unit">
         <button class="unit-toggle">2. Real Numbers</button>
-
         <div class="unit-content">
-
             <div class="subtopics">
                 <p>2.1 Real Numbers</p>
                 <p>2.2 Add and Subtract Real Numbers</p>
                 <p>2.3 Multiply and Divide Real Numbers</p>
                 <p>2.4 Combine Like Terms and Distribute</p>
             </div>
-
             <div class="unit-buttons">
-                <a class="exercise-btn" href="/notes?subject=algebra1&unit=2">Review</a>
+                <a class="exercise-btn" href="/notes?subject=algebra1&unit=2">Notes</a>
 
-
+                <button class="exercise-btn extra-btn"
+                        type="button"
+                        aria-expanded="false"
+                        data-video-id="ghS-LsxZq14"
+                        data-start="0">
+                    Unit 2 Review
+                </button>
             </div>
 
+            <div class="extra-panel" hidden>
+                <div class="video-wrapper"></div>
+            </div>
         </div>
     </div>
+
+
 
     <div class="unit">
         <button class="unit-toggle">3. Solving Equations</button>
-
         <div class="unit-content">
-
             <div class="subtopics">
-                <p> 3.1  One Step Equations</p>
-                <p> 3.2  Two Step Equations</p>
-                <p>3.3 MultiStep Equations</p>
+                <p>3.1 One-Step Equations</p>
+                <p>3.2 Two-Step Equations</p>
+                <p>3.3 Multi-Step Equations</p>
                 <p>3.4 Variables all over the place</p>
             </div>
-
             <div class="unit-buttons">
-                <a class="exercise-btn" href="/notes?subject=algebra1&unit=3">Review</a>
-
-
+                <a class="exercise-btn" href="/notes?subject=algebra1&unit=3">Notes</a>
             </div>
 
         </div>
     </div>
 
-
     <div class="unit">
         <button class="unit-toggle">4. Solving Proportions</button>
-
         <div class="unit-content">
-
             <div class="subtopics">
                 <p>4.1 Ratios and Proportions</p>
                 <p>4.2 Solving Proportions with Cross Products</p>
                 <p>4.3 Solving Percent Problems</p>
                 <p>4.4 Solving for Y</p>
             </div>
-
             <div class="unit-buttons">
-                <a class="exercise-btn" href="/notes?subject=algebra1&unit=4">Review</a>
+                <a class="exercise-btn" href="/notes?subject=algebra1&unit=4">Notes</a>
 
-
+                <button class="exercise-btn extra-btn"
+                        type="button"
+                        aria-expanded="false"
+                        data-video-id="TiR426JI0bo"
+                        data-start="0">
+                    Unit 4 Review
+                </button>
             </div>
 
+            <div class="extra-panel" hidden>
+                <div class="video-wrapper"></div>
+            </div>
         </div>
     </div>
 
-
     <div class="unit">
         <button class="unit-toggle">5. Linear Functions</button>
-
         <div class="unit-content">
-
             <div class="subtopics">
                 <p>5.1 Plot Points in the Coordinate Plane</p>
                 <p>5.2 Graph Linear Equations using Intercepts</p>
                 <p>5.3 Rate of Change (Slope)</p>
-                <p>5.4 Graph Linear in Slope Intercept Form</p>
+                <p>5.4 Graph Linear in Slope-Intercept Form</p>
                 <p>5.5 Graph Linear Functions</p>
             </div>
-
             <div class="unit-buttons">
-                <a class="exercise-btn" href="/notes?subject=algebra1&unit=5">Review</a>
+                <a class="exercise-btn" href="/notes?subject=algebra1&unit=5">Notes</a>
+
+                <button class="exercise-btn extra-btn"
+                        type="button"
+                        aria-expanded="false"
+                        data-video-id="lmKTqk8HgeU"
+                        data-start="0">
+                    Unit 5 Review
+                </button>
             </div>
 
+            <div class="extra-panel" hidden>
+                <div class="video-wrapper"></div>
+            </div>
         </div>
     </div>
-
 
     <div class="unit">
-        <button class="unit-toggle">6. Writing Linear Equation</button>
-
+        <button class="unit-toggle">6. Writing Linear Equations</button>
         <div class="unit-content">
-
             <div class="subtopics">
-                <p>6.1 Write in Slope-intercept Form</p>
-                <p>6.2 Use Equations in Slope-intercept Form</p>
-                <p>6.3 Eqns of Parallel/Perpendicular Forms</p>
-                <p>6.4 Fit a Line to Data/Linear Models</p>
+                <p>6.1 Write in Slope-Intercept Form</p>
+                <p>6.2 Use Equations in Slope-Intercept Form</p>
+                <p>6.3 Equations of Parallel/Perpendicular Lines</p>
+                <p>6.4 Fit a Line to Data / Linear Models</p>
             </div>
-
             <div class="unit-buttons">
-                <a class="exercise-btn" href="/notes?subject=algebra1&unit=6">Review</a>
+                <a class="exercise-btn" href="/notes?subject=algebra1&unit=6">Notes</a>
+
+                <button class="exercise-btn extra-btn"
+                        type="button"
+                        aria-expanded="false"
+                        data-video-id="jlryzWgjMUo"
+                        data-start="0">
+                    Unit 6 Review
+                </button>
             </div>
 
+            <div class="extra-panel" hidden>
+                <div class="video-wrapper"></div>
+            </div>
         </div>
     </div>
-
 
     <div class="unit">
         <button class="unit-toggle">7. Solving and Graphing Linear Inequalities</button>
-
         <div class="unit-content">
-
             <div class="subtopics">
                 <p>7.1 Inequalities</p>
                 <p>7.2 Solve Inequalities</p>
                 <p>7.3 Multi-step Inequalities</p>
-                <p>7.4 Absolute Value Equation</p>
+                <p>7.4 Absolute Value Equations</p>
                 <p>7.5 Linear Inequalities in Two Variables</p>
             </div>
-
             <div class="unit-buttons">
-                <a class="exercise-btn" href="/notes?subject=algebra1&unit=7">Review</a>
+                <a class="exercise-btn" href="/notes?subject=algebra1&unit=7">Notes</a>
+
+                <button class="exercise-btn extra-btn"
+                        type="button"
+                        aria-expanded="false"
+                        data-video-id="Hq9x9mCMfkQ"
+                        data-start="0">
+                    Unit 7 Review
+                </button>
             </div>
 
+            <div class="extra-panel" hidden>
+                <div class="video-wrapper"></div>
+            </div>
         </div>
     </div>
 
-
     <div class="unit">
         <button class="unit-toggle">8. Systems of Equations and Inequalities</button>
-
         <div class="unit-content">
-
             <div class="subtopics">
                 <p>8.1 Solving Systems by Graphing</p>
                 <p>8.2 Solving Systems by Substitution</p>
@@ -196,40 +255,54 @@
                 <p>8.4 Solving Special Systems</p>
                 <p>8.5 Solving Systems of Inequalities</p>
             </div>
-
             <div class="unit-buttons">
-                <a class="exercise-btn" href="/notes?subject=algebra1&unit=8">Review</a>
+                <a class="exercise-btn" href="/notes?subject=algebra1&unit=8">Notes</a>
+
+                <button class="exercise-btn extra-btn"
+                        type="button"
+                        aria-expanded="false"
+                        data-video-id="I3D5r3Wf1vY"
+                        data-start="0">
+                    Unit 8 Review
+                </button>
             </div>
 
+            <div class="extra-panel" hidden>
+                <div class="video-wrapper"></div>
+            </div>
         </div>
     </div>
 
-
     <div class="unit">
         <button class="unit-toggle">9. Exponents</button>
-
         <div class="unit-content">
-
             <div class="subtopics">
                 <p>9.1 Expand and Condense Exponents</p>
                 <p>9.2 Exponent Rules</p>
                 <p>9.3 Zero and Negative Exponents</p>
                 <p>9.4 Scientific Notation</p>
             </div>
-
             <div class="unit-buttons">
-                <a class="exercise-btn" href="/notes?subject=algebra1&unit=9">Review</a>
+                <a class="exercise-btn" href="/notes?subject=algebra1&unit=9">Notes</a>
+
+                <button class="exercise-btn extra-btn"
+                        type="button"
+                        aria-expanded="false"
+                        data-video-id="jVZfYBgpEZU"
+                        data-start="0">
+                    Unit 9 Review
+                </button>
             </div>
 
+            <div class="extra-panel" hidden>
+                <div class="video-wrapper"></div>
+            </div>
         </div>
     </div>
 
-
     <div class="unit">
         <button class="unit-toggle">10. Polynomials</button>
-
         <div class="unit-content">
-
             <div class="subtopics">
                 <p>10.1 Add and Subtract Polynomials</p>
                 <p>10.2 Multiply Polynomials</p>
@@ -238,64 +311,79 @@
                 <p>10.5 Factor ax² + bx + c</p>
                 <p>10.6 Factor Special Products</p>
             </div>
-
             <div class="unit-buttons">
-                <a class="exercise-btn" href="/notes?subject=algebra1&unit=10">Review</a>
+                <a class="exercise-btn" href="/notes?subject=algebra1&unit=10">Notes</a>
+
+                <button class="exercise-btn extra-btn"
+                        type="button"
+                        aria-expanded="false"
+                        data-video-id="SAVK_TqeWxM"
+                        data-start="0">
+                    Unit 10 Review
+                </button>
             </div>
 
+            <div class="extra-panel" hidden>
+                <div class="video-wrapper"></div>
+            </div>
         </div>
     </div>
 
-
     <div class="unit">
         <button class="unit-toggle">11. Square Roots and Radicals</button>
-
         <div class="unit-content">
-
             <div class="subtopics">
                 <p>11.1 Simplifying Radicals</p>
                 <p>11.2 Operations with Square Roots</p>
             </div>
-
             <div class="unit-buttons">
-                <a class="exercise-btn" href="/notes?subject=algebra1&unit=11">Review</a>
+                <a class="exercise-btn" href="/notes?subject=algebra1&unit=11">Notes</a>
+
+                <button class="exercise-btn extra-btn"
+                        type="button"
+                        aria-expanded="false"
+                        data-video-id="wG_bWe3CQW0"
+                        data-start="0">
+                    Unit 11 Review
+                </button>
             </div>
 
+            <div class="extra-panel" hidden>
+                <div class="video-wrapper"></div>
+            </div>
         </div>
     </div>
 
-
     <div class="unit">
         <button class="unit-toggle">12. Quadratic Functions</button>
-
         <div class="unit-content">
-
             <div class="subtopics">
                 <p>12.1 Graphing Quadratics in Standard Form</p>
                 <p>12.2 Solve Quadratics by Graphing</p>
                 <p>12.3 Solve Quadratics using Square Roots</p>
                 <p>12.4 Solve Quadratics using Quadratic Formula</p>
             </div>
-
             <div class="unit-buttons">
-                <a class="exercise-btn" href="/notes?subject=algebra1&unit=12">Review</a>
+                <a class="exercise-btn" href="/notes?subject=algebra1&unit=12">Notes</a>
+
+                <button class="exercise-btn extra-btn"
+                        type="button"
+                        aria-expanded="false"
+                        data-video-id="naLK0LbP-sk"
+                        data-start="0">
+                    Unit 12 Review
+                </button>
             </div>
 
+            <div class="extra-panel" hidden>
+                <div class="video-wrapper"></div>
+            </div>
         </div>
     </div>
-
-
-
-
-
-
-
-
 </section>
 
 <script>
     const toggles = document.querySelectorAll(".unit-toggle");
-
     toggles.forEach(btn => {
         btn.addEventListener("click", () => {
             const content = btn.nextElementSibling;
@@ -303,6 +391,6 @@
         });
     });
 </script>
-
+<script src="/js/reviewDropdown.js"></script>
 </body>
 </html>

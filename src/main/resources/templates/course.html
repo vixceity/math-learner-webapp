@@ -1,25 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Course</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Unna:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="/css/courses.css" />
 </head>
 
 <body>
-<nav>
-    <a href="/home"><div class="logo">Numbl</div></a>
-    <div class="nav-item">
+<nav class="nav">
+
+
+    <a href="/home" sec:authorize="isAuthenticated()">
+        <div class="logo">Numbl</div>
+    </a>
+
+    <a href="/" sec:authorize="!isAuthenticated()">
+        <div class="logo">Numbl</div>
+    </a>
+
+
+    <div class="nav-item" sec:authorize="!isAuthenticated()">
+        <a href="/about">About</a>
+        <a href="/courses">Courses</a>
+        <a href="/signup">Log In</a>
+    </div>
+
+
+    <div class="nav-item" sec:authorize="isAuthenticated()">
         <a href="/course">Courses</a>
         <a href="/calendar">Join Live</a>
-        <a href="/">Log Out</a>
+
+        <form th:action="@{/logout}" method="post" class="logout-form">
+            <input type="hidden"
+                   th:if="${_csrf != null}"
+                   th:name="${_csrf.parameterName}"
+                   th:value="${_csrf.token}">
+            <button type="submit" class="nav-link-button">Log Out</button>
+        </form>
     </div>
 </nav>
 
@@ -35,11 +61,8 @@
         <h2 class="section-title">All Courses</h2>
 
         <div class="course-grid">
-
-            <!-- to add a new card, just -->
-            <a class="course-link" href="algebra1">
+            <a class="course-link" th:href="@{/algebra1}">
                 <div class="course-card">
-                    <img src="https://via.placeholder.com/1600x450" alt="Course image">
                     <div class="card-content">
                         <span class="course-tag">Intermediate</span>
                         <h3>Algebra 1</h3>
@@ -48,10 +71,8 @@
                 </div>
             </a>
 
-
-            <a class="course-link" href="geometry">
+            <a class="course-link" th:href="@{/geometry}">
                 <div class="course-card">
-                    <img src="https://via.placeholder.com/1600x450" alt="Course image">
                     <div class="card-content">
                         <span class="course-tag">Intermediate</span>
                         <h3>Geometry</h3>
@@ -60,9 +81,8 @@
                 </div>
             </a>
 
-            <a class="course-link" href="algebra2">
+            <a class="course-link" th:href="@{/algebra2}">
                 <div class="course-card">
-                    <img src="https://via.placeholder.com/1600x450" alt="Course image">
                     <div class="card-content">
                         <span class="course-tag">Intermediate</span>
                         <h3>Algebra 2</h3>
@@ -73,6 +93,33 @@
         </div>
     </section>
 </main>
+<footer class="ka-footer">
+    <div class="footer-container">
+        <div class="footer-column">
+            <h4>About</h4>
+            <ul>
+                <li><a href="/about">About Us</a></li>
+                <li><a href="/citation" target="_blank">Citation</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-column">
+            <h4>Contact</h4>
+            <ul>
+                <li><a href="/calendar">Collaborate</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-column">
+            <h4>Course</h4>
+            <ul>
+                <li><a href="/algebra1">Algebra 1</a></li>
+                <li><a href="/algebra2">Algebra 2</a></li>
+                <li><a href="/geometry">Geometry</a></li>
+            </ul>
+        </div>
+        <div class="footer-note">
+            <p>Our mission is to create a free, collaborative site where anyone can advance in math</p>
+        </div>
 </body>
 </html>
-

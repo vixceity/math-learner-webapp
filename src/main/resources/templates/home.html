@@ -1,6 +1,8 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,7 +23,14 @@
     <div class="nav-item">
         <a href="/course">Courses</a>
         <a href="/calendar">Join Live</a>
-        <a href="/">Log Out</a>
+        <form th:action="@{/logout}" method="post" class="logout-form">
+            <input type="hidden"
+                   th:if="${_csrf != null}"
+                   th:name="${_csrf.parameterName}"
+                   th:value="${_csrf.token}">
+            <button type="submit" class="nav-link-button">Log Out</button>
+        </form>
+
     </div>
 </nav>
 
@@ -29,15 +38,29 @@
 
     <div class="penguin-box">
         <div class="speech-bubble">
-            <p id="welcome-text">Welcome back, user!</p>
+            <p id="welcome-text" th:text="'Welcome back, ' + ${#authentication.name} + '!'">
+                Welcome back, user!
+            </p>
             <div class="bubble-arrow"></div>
 
         </div>
 
 
         <div class="penguin-animation">
-            <canvas id="penguinCanvas"></canvas>
+            <div class="penguin-stage">
+                <canvas id="penguinCanvas"></canvas>
+            </div>
+
+            <div class="dashboard-events">
+                <div class="events-header">
+                    <h3>📅 Upcoming Events</h3>
+                    <a class="events-link" href="/calendar">Manage</a>
+                </div>
+
+                <div id="dashboard-events-list" class="events-list"></div>
+            </div>
         </div>
+
 
 
     </div>
@@ -47,7 +70,7 @@
 
         <div class="info-card">
             <h3>🔥 Streak</h3>
-            <p id="streak-count">5 days</p>
+            <p id="streak-count">0 days</p>
         </div>
 
         <div class="info-card">
@@ -55,16 +78,12 @@
             <p id="current-subject">Algebra</p>
         </div>
 
-        <div class="info-card">
-            <h3>📅 Events</h3>
-            <p>No current events</p>
-        </div>
+
 
     </div>
 
 </div>
 
 <script src="/js/home.js"></script>
-
 </body>
 </html>
